@@ -8,7 +8,7 @@
 .cardContainer {
     width: auto;
     height: 80vh;
-    background: slateblue;
+    background: #02b3e4;
     padding: 20px 10px;
     display: flex;
     flex-wrap: wrap;
@@ -20,5 +20,29 @@
         height: 40%;
         background: cyan;
         border: 1px solid black;
+        position: relative;
+        perspective: 800px;
+    }
+    .front, .back {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      transition:all 0.5s;
+      backface-visibility:hidden;
+    }
+    .front {
+      background: teal;
+    }
+
+    .back {
+      background: yellow;
+      transform:rotateY(-180deg);
+    }
+    .card.show .front {
+      transform:rotateY(180deg);
+    }
+
+    .card.show .back {
+      transform:rotateY(0);
     }
 }
