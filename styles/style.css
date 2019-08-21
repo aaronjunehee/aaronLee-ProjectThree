@@ -194,6 +194,10 @@ ul {
   padding: 0;
 }
 
+img {
+  width: 100%;
+}
+
 .cardContainer {
   width: auto;
   height: 80vh;
