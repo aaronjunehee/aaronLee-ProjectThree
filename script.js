@@ -1,4 +1,5 @@
-const snackArray = [
+const snackApp = {};
+snackApp.snacks = [
     {
         title: 'pizza',
         url: './styles/assets/snackPizza.jpg',
@@ -29,72 +30,167 @@ const snackArray = [
         url: './styles/assets/snackBubble.jpg',
         alt: 'words'
     },
-    // {
-    //     url: './styles/assets/snackCone.jpg',
-    //     alt: 'words'
-    // }
+    {
+        title: 'cone',
+        url: './styles/assets/snackCone.jpg',
+        alt: 'words'
+    },
+    {
+        title: 'cone',
+        url: './styles/assets/snackCone.jpg',
+        alt: 'words'
+    },
+    {
+        title: 'chocolate',
+        url: './styles/assets/snackChocolate.jpg',
+        alt: 'words'
+    },
+    {
+        title: 'chocolate',
+        url: './styles/assets/snackChocolate.jpg',
+        alt: 'words'
+    },
+    {
+        title: 'banana',
+        url: './styles/assets/snackBanana.jpg',
+        alt: 'words'
+    },
+    {
+        title: 'banana',
+        url: './styles/assets/snackBanana.jpg',
+        alt: 'words'
+    },
+    {
+        title: 'cookies',
+        url: './styles/assets/snackCookies.jpg',
+        alt: 'words'
+    },
+    {
+        title: 'cookies',
+        url: './styles/assets/snackCookies.jpg',
+        alt: 'words'
+    },
+    {
+        title: 'popcorn',
+        url: './styles/assets/snackPop.jpg',
+        alt: 'words'
+    },
+    {
+        title: 'popcorn',
+        url: './styles/assets/snackPop.jpg',
+        alt: 'words'
+    }
     
 ]
 
+// Fisher-Yates Shuffle 
+snackApp.shuffle = function (array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
 
-snackArray.forEach(function(item){
-    // console.log("hello");
-    const listTag = $('<li>').addClass('card');
-    const buttonFront = $('<button>').addClass('front');
-    const buttonBack = $('<button>').addClass('back');
-    const image = $('<img>').attr('src', item.url).attr('alt', item.alt);
-
-    buttonBack.append(image);
-
-    listTag.append(buttonFront, buttonBack);
-    $('.cardContainer').append(listTag);
-})
-
-
-
-
-// for(let item in snackArray){
-//     console.log(item);
-
-//     const storeSnack = $(`<img src="${snackArray[item]}">`)
-//     $('.back').append(storeSnack)
-// }
-
-// snackArray.forEach(function(){
-//     console.log("hello");
-    
-// });
-
-
-let openedSnacks = [];
-function empty(array) {
-    array.length = 0;
+    while (currentIndex !== 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+    return array;
 }
 
-$(document).ready(function(){
-    $('.card').on('click', function(){
-        openedSnacks.push($(this).addClass('show'));
-        
-        if (openedSnacks[0][0].children[1].innerHTML == openedSnacks[1][0].children[1].innerHTML ) {
-            empty(openedSnacks);
-        } else { 
-            setTimeout(() => {
-            $('.card').removeClass('show');
-            empty(openedSnacks);
-        }, 1000)
 
+
+
+
+
+
+snackApp.displaySnacks = (snackArray) => {
+    snackArray.forEach( (snackItem) => {
+        const listTag = $('<li>').addClass('card').attr('title', snackItem.title);;
+        const buttonFront = $('<button>').addClass('front');
+        const buttonBack = $('<button>').addClass('back');
+        const image = $('<img>').attr('src', snackItem.url).attr('alt', snackItem.alt);
+
+        buttonBack.append(image);
+
+        listTag.append(buttonFront, buttonBack);
+        $('.cardContainer').append(listTag);
+    })
+
+}
+
+
+
+
+// on user click, class of 'selected' is attached to clicked card and checked if the subsequent clicked card is a match or not
+snackApp.userClick = function () {
+    $('.cardContainer').on('click', '.card', function () {
+        $(this).addClass('show selected')
+        if ($('.selected').length == 2) {
+            moveCounter();
+            
+            // for when cards match
+            if ($('.selected').first().attr('title') == $('.selected').last().attr('title')) {
+                $('.selected').addClass('wiggle')
+                setTimeout(() => {
+                    
+                    $('.selected').removeClass('selected').addClass('matched');
+                    checkWin();
+                }, 2000)
+
+            // for when cards don't match
+            } else {
+                setTimeout(() => {
+                    $('.card').removeClass('show selected');
+
+
+                }, 1000)
+            }
+
+        // to disable card click temporarily
+        } else if ($('.selected').length >= 3) {
+            $(this).removeClass('show selected');
         }
-        // if(openedSnacks.length === 2) {
-        //     setTimeout(() => {
-        //     $('.card').removeClass('show');
-        //     empty(openedSnacks);
-        // }, 1000)
-        // }
-       
-        // if ($())
-        // setTimeout(() => {
-        //     $(this).removeClass('show');
-        
-        // }, 2000)
     });
+}
+
+
+let move = 0;
+function moveCounter() {
+    move = move + 1;
+    $('.counter').text(move);
+}
+
+const checkWin = function () {
+    if ($('.card.matched').length === snackApp.snacks.length) {
+        alert('You WIN!! You get a snack')
+    }
+}
+
+
+
+snackApp.init = function() {
+    let randomizedSnacks = snackApp.shuffle(snackApp.snacks);
+    snackApp.displaySnacks(randomizedSnacks);
+    snackApp.userClick();
+}
+
+
+$('.startGame').on('click', function(){
+    $('header').fadeOut("slow");
+    setTimeout(()=> {
+        $('main:hidden').fadeIn("slow").addClass('show')
+       
+    }, 600)
+    // setTimeout(()=> {
+    //     $('main').addClass('show');
+    //     $('header').addClass('hide');
+    // }, 500)
+    // setTimeout(()=> {
+    //     $('main').addClass('transition');
+    // },1000)
+})
+
+$(document).ready(function(){
+    snackApp.init();
+
 });

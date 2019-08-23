@@ -1,5 +1,5 @@
 .wrapper {
-    width: 80%;
+    width: 85%;
     max-width: 600px;
     margin: 0 auto;
 }
@@ -10,5 +10,18 @@ ul {
 }
 
 img {
-    width: 100%;
+    max-width: 100%;
+    display: block;
+}
+
+button {
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+button,
+.card,
+img {
+    border-radius: 10px;
 }

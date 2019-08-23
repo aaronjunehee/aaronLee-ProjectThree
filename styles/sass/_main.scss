@@ -1,27 +1,41 @@
-.gameBox {
-    // width: auto;
-    // height: 480px;
-    // background: slateblue;
+section {
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    display: none;
+    height: 100vh;
+    margin: auto;
+}
+
+.mainWrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 
 .cardContainer {
-    width: auto;
-    height: 80vh;
+    width: 550px;
+    height: 550px;
     background: #02b3e4;
-    padding: 20px 10px;
+    padding: 7.5px 2px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    align-content: space-around;
+    align-items: center;
+    // align-content: space-around;
     .card {
-        flex: 0 1 30%;
+        width: 22.5%;
         flex-wrap: wrap;
-        height: 40%;
-        background: cyan;
-        border: 1px solid black;
+        height: 22.5%;
+        // background: cyan;
+        // border: 1px solid black;
         position: relative;
         perspective: 800px;
+        border-radius: 25px;
     }
     .front, .back {
       width: 100%;
@@ -37,13 +51,29 @@
     .back {
       background: yellow;
       transform:rotateY(-180deg);
+    //   border: 1px solid red;
     }
     .card.show .front {
       transform:rotateY(180deg);
     }
 
-    .card.win .front {
-      transform:rotateY(180deg);
+    .card.selected {
+        
+    }
+
+    .card.matched {
+        .back {
+            transform:none;
+            transform:rotateY(0);
+        }
+        .front {
+            opacity: 0;
+        }
+        
+    }
+
+    .card.disabled {
+        pointer-events: none;
     }
 
 
@@ -53,4 +83,17 @@
     // .card.hide {
     //     visibility:hidden;
     // }
+}
+
+@keyframes wiggle {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-10deg); }
+    50% { transform: rotate(20deg); }
+    75% { transform: rotate(-10deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.selected.wiggle {
+    /* apply animation */
+    animation: wiggle 2s;
 }
