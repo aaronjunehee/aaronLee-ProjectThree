@@ -181,7 +181,7 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 
 .wrapper {
   width: 85%;
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
@@ -208,10 +208,132 @@ img {
 }
 
 body {
-  background-image: url(./assets/virgin.jpg);
+  background: #c9dbe9;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+
+body {
+  overflow: hidden;
+}
+
+#clouds {
+  padding: 100px 0;
+  background: #c9dbe9;
+  background: -linear-gradient(top, #c9dbe9 0%, #fff 100%);
+  background: -moz-linear-gradient(top, #c9dbe9 0%, #fff 100%);
+}
+
+#clouds {
+  position: absolute;
+  top: 300px;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: -100;
+}
+
+/*Time to finalise the cloud shape*/
+.cloud {
+  width: 200px;
+  height: 60px;
+  background: #fff;
+  border-radius: 200px;
+  -moz-border-radius: 200px;
+  -webkit-border-radius: 200px;
+  position: relative;
+}
+
+.cloud:before, .cloud:after {
+  content: '';
+  position: absolute;
+  background: #fff;
+  width: 100px;
+  height: 80px;
+  position: absolute;
+  top: -15px;
+  left: 10px;
+  border-radius: 100px;
+  -moz-border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -webkit-transform: rotate(30deg);
+  transform: rotate(30deg);
+  -moz-transform: rotate(30deg);
+}
+
+.cloud:after {
+  width: 120px;
+  height: 120px;
+  top: -55px;
+  left: auto;
+  right: 15px;
+}
+
+/*Time to animate*/
+.x1 {
+  -webkit-animation: moveclouds 20s linear infinite;
+  -moz-animation: moveclouds 20s linear infinite;
+  -o-animation: moveclouds 20s linear infinite;
+}
+
+/*variable speed, opacity, and position of clouds for realistic effect*/
+.x2 {
+  left: 200px;
+  -webkit-transform: scale(0.6);
+  transform: scale(0.6);
+  opacity: 0.6;
+  /*opacity proportional to the size*/
+  /*Speed will also be proportional to the size and opacity*/
+  /*More the speed. Less the time in 's' = seconds*/
+  -webkit-animation: moveclouds 25s linear infinite;
+  -moz-animation: moveclouds 25s linear infinite;
+  -o-animation: moveclouds 25s linear infinite;
+}
+
+.x3 {
+  left: -250px;
+  top: -200px;
+  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
+  opacity: 0.8;
+  /*opacity proportional to the size*/
+  -webkit-animation: moveclouds 30s linear infinite;
+  -moz-animation: moveclouds 30s linear infinite;
+  -o-animation: moveclouds 30s linear infinite;
+}
+
+.x4 {
+  left: 470px;
+  top: -250px;
+  -webkit-transform: scale(0.75);
+  transform: scale(0.75);
+  opacity: 0.75;
+  /*opacity proportional to the size*/
+  -webkit-animation: moveclouds 18s linear infinite;
+  -moz-animation: moveclouds 18s linear infinite;
+  -o-animation: moveclouds 18s linear infinite;
+}
+
+.x5 {
+  left: -150px;
+  top: -150px;
+  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
+  opacity: 0.8;
+  /*opacity proportional to the size*/
+  -webkit-animation: moveclouds 20s linear infinite;
+  -moz-animation: moveclouds 20s linear infinite;
+  -o-animation: moveclouds 20s linear infinite;
+}
+
+@-webkit-keyframes moveclouds {
+  0% {
+    margin-left: 2000px;
+  }
+  100% {
+    margin-left: -1000px;
+  }
 }
 
 header {
@@ -226,10 +348,17 @@ header {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  position: relative;
 }
 
 h1 {
-  color: red;
+  font-family: 'Chewy', cursive;
+  color: white;
+  text-shadow: -1px 1px 0px #56396d, -2px 2px 0px #56396d, -3px 3px 0px #56396d, -4px 4px 0px #56396d, -5px 5px 0px #56396d, -6px 6px 0px #56396d, -7px 7px 0px #56396d, -8px 8px 0px #56396d, -9px 9px 0px #56396d, -10px 10px 0px #56396d, -11px 11px 0px #56396d, -12px 12px 0px #56396d, 2px 2px 3px rgba(0, 0, 0, 0.521);
+  font-size: 110px;
+  letter-spacing: 8px;
+  line-height: 110px;
+  position: relative;
 }
 
 h1,
@@ -237,8 +366,86 @@ p {
   text-align: center;
 }
 
+.snackMatch {
+  display: block;
+  font-size: 90px;
+  letter-spacing: 5.5px;
+}
+
+.snackLogo {
+  width: 200px;
+  position: absolute;
+  margin-bottom: 40px;
+  -webkit-animation: action 4s infinite;
+          animation: action 4s infinite;
+}
+
+.logoOne {
+  left: -120px;
+}
+
+.logoTwo {
+  right: -100px;
+}
+
 .startGame {
   margin: 0 auto;
+  background: #ffef9d;
+  padding: 15px 20px;
+  border-radius: 40px;
+  font-family: 'Kalam', cursive;
+  font-size: 30px;
+  color: #56396d;
+  text-transform: uppercase;
+  -webkit-box-shadow: 5px 10px #56396d;
+          box-shadow: 5px 10px #56396d;
+  margin-top: -20px;
+}
+
+@-webkit-keyframes action {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  25% {
+    -webkit-transform: rotate(-20deg);
+            transform: rotate(-20deg);
+  }
+  50% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  75% {
+    -webkit-transform: rotate(20deg);
+            transform: rotate(20deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@keyframes action {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  25% {
+    -webkit-transform: rotate(-20deg);
+            transform: rotate(-20deg);
+  }
+  50% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  75% {
+    -webkit-transform: rotate(20deg);
+            transform: rotate(20deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
 }
 
 section {
@@ -273,7 +480,7 @@ main {
 .cardContainer {
   width: 550px;
   height: 550px;
-  background: #d4f5ff;
+  background-image: url(./assets/virgin.jpg);
   padding: 7.5px 2px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -310,7 +517,8 @@ main {
 }
 
 .cardContainer .front {
-  background: #75d8ff;
+  background: white;
+  border: 2px solid #55396c;
 }
 
 .cardContainer .back {

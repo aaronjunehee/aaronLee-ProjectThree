@@ -1,82 +1,82 @@
 const snackApp = {};
 snackApp.snacks = [
     {
-        title: 'pizza',
+        id: 'pizza',
         url: './styles/assets/snackPizza.jpg',
         alt: 'words'
     },
     {
-        title: 'pizza',
+        id: 'pizza',
         url: './styles/assets/snackPizza.jpg',
         alt: 'words'
     },
     {
-        title: 'fries',
+        id: 'fries',
         url: './styles/assets/snackFries.jpg',
         alt: 'words'
     },
     {
-        title: 'fries',
+        id: 'fries',
         url: './styles/assets/snackFries.jpg',
         alt: 'words'
     },
     {
-        title: 'bubble',
+        id: 'bubble',
         url: './styles/assets/snackBubble.jpg',
         alt: 'words'
     },
     {
-        title: 'bubble',
+        id: 'bubble',
         url: './styles/assets/snackBubble.jpg',
         alt: 'words'
     },
     {
-        title: 'cone',
+        id: 'cone',
         url: './styles/assets/snackCone.jpg',
         alt: 'words'
     },
     {
-        title: 'cone',
+        id: 'cone',
         url: './styles/assets/snackCone.jpg',
         alt: 'words'
     },
     {
-        title: 'chocolate',
+        id: 'chocolate',
         url: './styles/assets/snackChocolate.jpg',
         alt: 'words'
     },
     {
-        title: 'chocolate',
+        id: 'chocolate',
         url: './styles/assets/snackChocolate.jpg',
         alt: 'words'
     },
     {
-        title: 'banana',
+        id: 'banana',
         url: './styles/assets/snackBanana.jpg',
         alt: 'words'
     },
     {
-        title: 'banana',
+        id: 'banana',
         url: './styles/assets/snackBanana.jpg',
         alt: 'words'
     },
     {
-        title: 'cookies',
+        id: 'cookies',
         url: './styles/assets/snackCookies.jpg',
         alt: 'words'
     },
     {
-        title: 'cookies',
+        id: 'cookies',
         url: './styles/assets/snackCookies.jpg',
         alt: 'words'
     },
     {
-        title: 'popcorn',
+        id: 'popcorn',
         url: './styles/assets/snackPop.jpg',
         alt: 'words'
     },
     {
-        title: 'popcorn',
+        id: 'popcorn',
         url: './styles/assets/snackPop.jpg',
         alt: 'words'
     }
@@ -105,7 +105,7 @@ snackApp.shuffle = function (array) {
 
 snackApp.displaySnacks = (snackArray) => {
     snackArray.forEach( (snackItem) => {
-        const listTag = $('<li>').addClass('card').attr('title', snackItem.title);;
+        const listTag = $('<li>').addClass('card').attr('id', snackItem.id);;
         const buttonFront = $('<button>').addClass('front');
         const buttonBack = $('<button>').addClass('back');
         const image = $('<img>').attr('src', snackItem.url).attr('alt', snackItem.alt);
@@ -129,7 +129,7 @@ snackApp.userClick = function () {
             moveCounter();
             
             // for when cards match
-            if ($('.selected').first().attr('title') == $('.selected').last().attr('title')) {
+            if ($('.selected').first().attr('id') == $('.selected').last().attr('id')) {
                 $('.selected').addClass('wiggle')
                 setTimeout(() => {
                     

@@ -5,12 +5,32 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: relative;
     
 }
 
 h1 {
-    color: red;
-    
+    font-family: 'Chewy', cursive;
+    color: white;
+    // text-shadow: 4px 4px rgba(0, 0, 0, 0.726);
+    // box-shadow: -8px 8px #56396D;
+    text-shadow: -1px 1px 0px #56396d,
+    -2px 2px 0px #56396d,
+    -3px 3px 0px #56396d,
+    -4px 4px 0px #56396d,
+    -5px 5px 0px #56396d,
+    -6px 6px 0px #56396d,
+    -7px 7px 0px #56396d,
+    -8px 8px 0px #56396d,
+    -9px 9px 0px #56396d,
+    -10px 10px 0px #56396d,
+    -11px 11px 0px #56396d,
+    -12px 12px 0px #56396d,
+    2px 2px 3px rgba(0, 0, 0, 0.521);
+    font-size: 110px;
+    letter-spacing: 8px;
+    line-height: 110px;
+    position: relative;
 }
 
 h1, 
@@ -18,7 +38,44 @@ p {
     text-align: center;
 }
 
+.snackMatch {
+    display: block;
+    font-size: 90px;
+    letter-spacing: 5.5px;
+}
+
+.snackLogo {
+    width: 200px;
+    position: absolute;
+    margin-bottom: 40px;
+    animation: action 4s infinite;
+}
+.logoOne {
+    left: -120px;
+}
+.logoTwo {
+    right: -100px;
+}
+
 .startGame {
     margin: 0 auto;
+    background: rgb(255, 239, 157);
+    // width: 100px;
+    padding: 15px 20px;
+    border-radius: 40px;
+    font-family: 'Kalam', cursive;
+    font-size: 30px;
+    color: #56396d;
+    text-transform: uppercase;
+    box-shadow: 5px 10px #56396d;
+    margin-top: -20px;
+}
+
+@keyframes action {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-20deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(20deg); }
+    100% { transform: rotate(0deg); }
 }
 

@@ -20,7 +20,8 @@ main {
 .cardContainer {
     width: 550px;
     height: 550px;
-    background: rgb(212, 245, 255);
+    // background: #cfebf9;
+    background-image: url(./assets/virgin.jpg);
     padding: 7.5px 2px;
     display: flex;
     flex-wrap: wrap;
@@ -35,6 +36,7 @@ main {
         // border: 1px solid black;
         position: relative;
         perspective: 800px;
+        // box-shadow: 5px 6px #7b95df;
     }
     .front, .back {
       width: 100%;
@@ -44,7 +46,10 @@ main {
       backface-visibility:hidden;
     }
     .front {
-      background: rgb(117, 216, 255);
+      background: white;
+    //   box-shadow: -8px 5px #55396c;
+      border: 2px solid #55396c;
+    //   rgb(117, 216, 255);
     }
 
     .back {
