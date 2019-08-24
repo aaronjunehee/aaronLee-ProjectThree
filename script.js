@@ -135,13 +135,12 @@ snackApp.userClick = function () {
                     
                     $('.selected').removeClass('selected').addClass('matched');
                     checkWin();
-                }, 2000)
+                }, 1000)
 
             // for when cards don't match
             } else {
                 setTimeout(() => {
                     $('.card').removeClass('show selected');
-
 
                 }, 1000)
             }

@@ -20,13 +20,13 @@ main {
 .cardContainer {
     width: 550px;
     height: 550px;
-    background: #02b3e4;
+    background: rgb(212, 245, 255);
     padding: 7.5px 2px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
-    // align-content: space-around;
+    border-radius: 25px;
     .card {
         width: 22.5%;
         flex-wrap: wrap;
@@ -35,7 +35,6 @@ main {
         // border: 1px solid black;
         position: relative;
         perspective: 800px;
-        border-radius: 25px;
     }
     .front, .back {
       width: 100%;
@@ -45,7 +44,7 @@ main {
       backface-visibility:hidden;
     }
     .front {
-      background: teal;
+      background: rgb(117, 216, 255);
     }
 
     .back {
@@ -95,5 +94,5 @@ main {
 
 .selected.wiggle {
     /* apply animation */
-    animation: wiggle 2s;
+    animation: wiggle 1s;
 }

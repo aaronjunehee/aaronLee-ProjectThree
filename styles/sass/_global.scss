@@ -23,5 +23,14 @@ button {
 button,
 .card,
 img {
-    border-radius: 10px;
+    border-radius: 100%;
+}
+
+body {
+    background-image: url(./assets/virgin.jpg);
+    // background-color: #00D5E4;
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }

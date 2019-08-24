@@ -204,7 +204,14 @@ button {
 button,
 .card,
 img {
-  border-radius: 10px;
+  border-radius: 100%;
+}
+
+body {
+  background-image: url(./assets/virgin.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 header {
@@ -266,7 +273,7 @@ main {
 .cardContainer {
   width: 550px;
   height: 550px;
-  background: #02b3e4;
+  background: #d4f5ff;
   padding: 7.5px 2px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -279,6 +286,7 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border-radius: 25px;
 }
 
 .cardContainer .card {
@@ -289,7 +297,6 @@ main {
   position: relative;
   -webkit-perspective: 800px;
           perspective: 800px;
-  border-radius: 25px;
 }
 
 .cardContainer .front, .cardContainer .back {
@@ -303,7 +310,7 @@ main {
 }
 
 .cardContainer .front {
-  background: teal;
+  background: #75d8ff;
 }
 
 .cardContainer .back {
@@ -385,6 +392,6 @@ main {
 
 .selected.wiggle {
   /* apply animation */
-  -webkit-animation: wiggle 2s;
-          animation: wiggle 2s;
+  -webkit-animation: wiggle 1s;
+          animation: wiggle 1s;
 }
