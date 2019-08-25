@@ -1,0 +1,21 @@
+main {
+    display: none; // visible only when user clicks 'Lets Eat!' button
+    height: 100vh;
+    .flexContainer {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        section.cardSection {
+            display: flex;
+            justify-content: center;
+        }
+    }
+}
+
+
+
+
+
+
+

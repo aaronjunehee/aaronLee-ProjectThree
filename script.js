@@ -3,83 +3,112 @@ snackApp.snacks = [
     {
         id: 'pizza',
         url: './styles/assets/snackPizza.jpg',
-        alt: 'words'
+        alt: 'words',
+        title: 'cookie card front',
+        'aria-label': 'Illustration of a cute cookie with its eyes closed and smiling with red rosy cheeks. Clicking on this cookie card will flip it over to reveal the random snack behind it'
     },
     {
         id: 'pizza',
         url: './styles/assets/snackPizza.jpg',
-        alt: 'words'
+        alt: 'words',
+        title: 'cookie card front',
+        'aria-label': 'Illustration of a cute cookie with its eyes closed and smiling with red rosy cheeks. Clicking on this cookie card will flip it over to reveal the random snack behind it'
     },
-    // {
-    //     id: 'fries',
-    //     url: './styles/assets/snackFries.jpg',
-    //     alt: 'words'
-    // },
-    // {
-    //     id: 'fries',
-    //     url: './styles/assets/snackFries.jpg',
-    //     alt: 'words'
-    // },
-    // {
-    //     id: 'bubble',
-    //     url: './styles/assets/snackBubble.jpg',
-    //     alt: 'words'
-    // },
-    // {
-    //     id: 'bubble',
-    //     url: './styles/assets/snackBubble.jpg',
-    //     alt: 'words'
-    // },
-    // {
-    //     id: 'cone',
-    //     url: './styles/assets/snackCone.jpg',
-    //     alt: 'words'
-    // },
-    // {
-    //     id: 'cone',
-    //     url: './styles/assets/snackCone.jpg',
-    //     alt: 'words'
-    // },
-    // {
-    //     id: 'chocolate',
-    //     url: './styles/assets/snackChocolate.jpg',
-    //     alt: 'words'
-    // },
-    // {
-    //     id: 'chocolate',
-    //     url: './styles/assets/snackChocolate.jpg',
-    //     alt: 'words'
-    // },
-    // {
-    //     id: 'banana',
-    //     url: './styles/assets/snackBanana.jpg',
-    //     alt: 'words'
-    // },
-    // {
-    //     id: 'banana',
-    //     url: './styles/assets/snackBanana.jpg',
-    //     alt: 'words'
-    // },
-    // {
-    //     id: 'candy',
-    //     url: './styles/assets/snackCandy.jpg',
-    //     alt: 'words'
-    // },
-    // {
-    //     id: 'candy',
-    //     url: './styles/assets/snackCandy.jpg',
-    //     alt: 'words'
-    // },
-    // {
-    //     id: 'popcorn',
-    //     url: './styles/assets/snackPop.jpg',
-    //     alt: 'words'
-    // },
-    // {
-    //     id: 'popcorn',
-    //     url: './styles/assets/snackPop.jpg',
-    //     alt: 'words'
-    // }
+    {
+        id: 'fries',
+        url: './styles/assets/snackFries.jpg',
+        alt: 'words',
+        title: 'cookie card front',
+        'aria-label': 'Illustration of a cute cookie with its eyes closed and smiling with red rosy cheeks. Clicking on this cookie card will flip it over to reveal the random snack behind it'
+    },
+    {
+        id: 'fries',
+        url: './styles/assets/snackFries.jpg',
+        alt: 'words',
+        title: 'cookie card front',
+        'aria-label': 'Illustration of a cute cookie with its eyes closed and smiling with red rosy cheeks. Clicking on this cookie card will flip it over to reveal the random snack behind it'
+    },
+    {
+        id: 'bubble',
+        url: './styles/assets/snackBubble.jpg',
+        alt: 'words',
+        title: 'cookie card front',
+        'aria-label': 'Illustration of a cute cookie with its eyes closed and smiling with red rosy cheeks. Clicking on this cookie card will flip it over to reveal the random snack behind it'
+    },
+    {
+        id: 'bubble',
+        url: './styles/assets/snackBubble.jpg',
+        alt: 'words',
+        title: 'cookie card front',
+        'aria-label': 'Illustration of a cute cookie with its eyes closed and smiling with red rosy cheeks. Clicking on this cookie card will flip it over to reveal the random snack behind it'
+    },
+    {
+        id: 'cone',
+        url: './styles/assets/snackCone.jpg',
+        alt: 'words',
+        title: 'cookie card front',
+        'aria-label': 'Illustration of a cute cookie with its eyes closed and smiling with red rosy cheeks. Clicking on this cookie card will flip it over to reveal the random snack behind it'
+    },
+    {
+        id: 'cone',
+        url: './styles/assets/snackCone.jpg',
+        alt: 'words',
+        title: 'cookie card front',
+        'aria-label': 'Illustration of a cute cookie with its eyes closed and smiling with red rosy cheeks. Clicking on this cookie card will flip it over to reveal the random snack behind it'
+    },
+    {
+        id: 'chocolate',
+        url: './styles/assets/snackChocolate.jpg',
+        alt: 'words',
+        title: 'cookie card front',
+        'aria-label': 'Illustration of a cute cookie with its eyes closed and smiling with red rosy cheeks. Clicking on this cookie card will flip it over to reveal the random snack behind it'
+    },
+    {
+        id: 'chocolate',
+        url: './styles/assets/snackChocolate.jpg',
+        alt: 'words',
+    },
+    {
+        id: 'banana',
+        url: './styles/assets/snackBanana.jpg',
+        alt: 'words',
+        title: 'cookie card front',
+        'aria-label': 'Illustration of a cute cookie with its eyes closed and smiling with red rosy cheeks. Clicking on this cookie card will flip it over to reveal the random snack behind it'
+    },
+    {
+        id: 'banana',
+        url: './styles/assets/snackBanana.jpg',
+        alt: 'words',
+        title: 'cookie card front',
+        'aria-label': 'Illustration of a cute cookie with its eyes closed and smiling with red rosy cheeks. Clicking on this cookie card will flip it over to reveal the random snack behind it'
+    },
+    {
+        id: 'candy',
+        url: './styles/assets/snackCandy.jpg',
+        alt: 'words',
+        title: 'cookie card front',
+        'aria-label': 'Illustration of a cute cookie with its eyes closed and smiling with red rosy cheeks. Clicking on this cookie card will flip it over to reveal the random snack behind it'
+    },
+    {
+        id: 'candy',
+        url: './styles/assets/snackCandy.jpg',
+        alt: 'words',
+        title: 'cookie card front'
+    },
+    {
+        id: 'popcorn',
+        url: './styles/assets/snackPop.jpg',
+        alt: 'words',
+        title: 'cookie card front',
+        'aria-label': 'Illustration of a cute cookie with its eyes closed and smiling with red rosy cheeks. Clicking on this cookie card will flip it over to reveal the random snack behind it'
+    },
+    {
+        id: 'popcorn',
+        url: './styles/assets/snackPop.jpg',
+        alt: 'words',
+        title: 'cookie card front',
+        'aria-label': 'Illustration of a cute cookie with its eyes closed and smiling with red rosy cheeks. Clicking on this cookie card will flip it over to reveal the random snack behind it'
+    }
     
 ]
 
@@ -106,7 +135,7 @@ snackApp.shuffle = function (array) {
 snackApp.displaySnacks = (snackArray) => {
     snackArray.forEach( (snackItem) => {
         const listTag = $('<li>').addClass('card').attr('id', snackItem.id);;
-        const buttonFront = $('<button>').addClass('front');
+        const buttonFront = $('<button>').addClass('front').attr('title', snackItem.title).attr('aria-label', snackItem['aria-label']);
         const buttonBack = $('<button>').addClass('back');
         const image = $('<img>').attr('src', snackItem.url).attr('alt', snackItem.alt);
 
@@ -231,7 +260,7 @@ const checkWin = function () {
         // swal(`You WIN!! You get a snack ${totalSec}`);
         $('.winMessage').addClass('userWon');
         console.log(`${totalSec} ${move}`);
-        
+        clearInterval(interval);
         
         $('.resetButton').on('click', function () {
             clearInterval(interval);
