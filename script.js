@@ -61,13 +61,13 @@ snackApp.snacks = [
         alt: 'words'
     },
     {
-        id: 'cookies',
-        url: './styles/assets/snackCookies.jpg',
+        id: 'candy',
+        url: './styles/assets/snackCandy.jpg',
         alt: 'words'
     },
     {
-        id: 'cookies',
-        url: './styles/assets/snackCookies.jpg',
+        id: 'candy',
+        url: './styles/assets/snackCandy.jpg',
         alt: 'words'
     },
     {
@@ -211,6 +211,18 @@ function startTimer() {
 }
 
 
+$('.restartButton').on('click', function(){
+    clearInterval(interval);
+    totalSec = 0;
+    $sec.text('00');
+    $min.text('00');
+    $('.counter').text('0');
+    move = 0;
+    $('.card').remove();
+    let randomizedSnacks = snackApp.shuffle(snackApp.snacks);
+    snackApp.displaySnacks(randomizedSnacks);
+})
+
 
 
 
@@ -219,13 +231,15 @@ const checkWin = function () {
         // swal(`You WIN!! You get a snack ${totalSec}`);
         $('.winMessage').addClass('userWon');
         console.log(`${totalSec} ${move}`);
-        clearInterval(interval);
+        
         
         $('.resetButton').on('click', function () {
+            clearInterval(interval);
+            totalSec = 0;
             console.log("hello");
             $sec.text('00');
             $min.text('00');
-            $('.counter').text('00');
+            $('.counter').text('0');
             move = 0;
             $('.winMessage').removeClass('userWon');
             $('.card').remove();

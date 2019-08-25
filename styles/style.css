@@ -309,7 +309,7 @@ body {
 }
 
 .x4 {
-  left: 470px;
+  left: 200px;
   top: -250px;
   -webkit-transform: scale(0.75);
   transform: scale(0.75);
@@ -588,6 +588,10 @@ main {
   background-repeat: no-repeat;
 }
 
+.cardContainer li:last-of-type .front {
+  background-image: url(./assets/cookieBite.png);
+}
+
 .cardContainer .back {
   background: yellow;
   -webkit-transform: rotateY(-180deg);
@@ -683,10 +687,12 @@ section.gameStats {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  position: relative;
 }
 
 section.gameStats .movesCounter,
-section.gameStats .timeCounter {
+section.gameStats .timeCounter,
+section.gameStats .restartButton {
   background: rgba(254, 241, 166, 0.5);
   border-radius: 20px;
   padding: 6px 5px;
@@ -722,6 +728,31 @@ section.gameStats .moves {
 section.gameStats .counter {
   font-size: 2.8rem;
   padding: 0 10px 0 17px;
+}
+
+section.gameStats .restartButton {
+  position: absolute;
+  right: 120px;
+  height: 50px;
+  width: 60px;
+  font-size: 2.6rem;
+}
+
+section.gameStats .restartButton:hover img {
+  opacity: 0;
+}
+
+section.gameStats .restartButton:hover .restart {
+  opacity: 1;
+  font-size: 3.3rem;
+}
+
+section.gameStats .restart {
+  opacity: 0;
+  position: absolute;
+  font-size: 3.3rem;
+  -webkit-transition: .5s;
+  transition: .5s;
 }
 
 .winMessage {
