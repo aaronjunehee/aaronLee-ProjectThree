@@ -260,6 +260,7 @@ const checkWin = function () {
         // swal(`You WIN!! You get a snack ${totalSec}`);
         $('.winMessage').addClass('userWon');
         console.log(`${totalSec} ${move}`);
+        $('.score').html(`You ate those snacks in ${totalSec} seconds with only ${move} moves!`)
         clearInterval(interval);
         
         $('.resetButton').on('click', function () {

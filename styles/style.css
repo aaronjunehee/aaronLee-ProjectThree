@@ -953,11 +953,11 @@ section.scoreBoard .restart {
 
 .winMessage {
   display: none;
-  width: 40%;
-  height: 55%;
+  width: 550px;
+  height: 550px;
+  margin-top: 50px;
   background: #ffef9d;
   position: absolute;
-  left: 30%;
   font-family: 'Kalam', cursive;
   color: #56396d;
   font-size: 4rem;
@@ -966,10 +966,40 @@ section.scoreBoard .restart {
   border-radius: 25px;
 }
 
+.winMessage h2 {
+  margin: 30px 0 0;
+}
+
+.winMessage h2,
+.winMessage p {
+  text-align: center;
+}
+
+.winMessage .winCookie {
+  width: 200px;
+  margin: -20px auto 0;
+}
+
+.winMessage img {
+  width: 100%;
+}
+
+.winMessage p {
+  margin: 15px 0 20px;
+  line-height: 5rem;
+}
+
 .winMessage .resetButton {
   border-radius: 10px;
   display: block;
   margin: 0 auto;
+  padding: 8px 12px 10px 14px;
+  background: #c9dbe9;
+  color: white;
+  font-family: "Chewy", cursive;
+  text-shadow: -1px 1px 0px #56396d, -2px 2px 0px #56396d, -3px 3px 0px #56396d, -3px 3px 0px #56396d, -4px 4px 0px #56396d, 1px 1px 2px rgba(0, 0, 0, 0.621);
+  -webkit-box-shadow: -5px 5px 1px #56396d;
+          box-shadow: -5px 5px 1px #56396d;
 }
 
 .winMessage.userWon {
