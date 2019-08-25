@@ -189,7 +189,7 @@ html {
   margin: 0 auto;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .wrapper {
     width: 95%;
   }
@@ -223,9 +223,6 @@ img {
 
 body {
   background: #c9dbe9;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
   font-size: 2rem;
 }
 
@@ -675,6 +672,9 @@ main .flexContainer {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 main .flexContainer section.cardSection {
@@ -707,6 +707,14 @@ section .cardContainer {
           box-shadow: 2px 2px 10px rgba(88, 88, 88, 0.534);
 }
 
+@media (max-width: 600px) {
+  section .cardContainer {
+    width: 350px;
+    height: 350px;
+    margin: 10px;
+  }
+}
+
 section .cardContainer .card {
   width: 22.5%;
   height: 22.5%;
@@ -732,6 +740,13 @@ section .cardContainer .front {
   background-size: 140px;
   background-position: -9px -12px;
   background-repeat: no-repeat;
+}
+
+@media (max-width: 600px) {
+  section .cardContainer .front {
+    background-size: 88px;
+    background-position: -4px -4px;
+  }
 }
 
 section .cardContainer li:last-of-type .front {
@@ -812,7 +827,6 @@ section .cardContainer .selected.wiggle {
 
 section.scoreBoard {
   width: 550px;
-  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -823,6 +837,12 @@ section.scoreBoard {
       -ms-flex-align: end;
           align-items: flex-end;
   position: relative;
+}
+
+@media (max-width: 600px) {
+  section.scoreBoard {
+    width: 350px;
+  }
 }
 
 section.scoreBoard .movesCounter,
@@ -843,21 +863,41 @@ section.scoreBoard .restartButton {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-family: 'Chewy', cursive;
-  color: #604079d3;
+  font-family: "Chewy", cursive;
+  color: #7e539f;
+  height: 50px;
+}
+
+@media (max-width: 600px) {
+  section.scoreBoard .movesCounter,
+  section.scoreBoard .timeCounter,
+  section.scoreBoard .restartButton {
+    height: 40px;
+  }
 }
 
 section.scoreBoard .timeCounter {
   width: 110px;
-  height: 50px;
   font-size: 2.8rem;
+}
+
+@media (max-width: 600px) {
+  section.scoreBoard .timeCounter {
+    font-size: 2.3rem;
+  }
 }
 
 section.scoreBoard .moves {
   font-size: 3.4rem;
   color: white;
-  text-shadow: 2px 2px .5px #604079d3;
+  text-shadow: 2px 2px 0.5px #56396d;
   padding-left: 6px;
+}
+
+@media (max-width: 600px) {
+  section.scoreBoard .moves {
+    font-size: 3rem;
+  }
 }
 
 section.scoreBoard .counter {
@@ -865,12 +905,28 @@ section.scoreBoard .counter {
   padding: 0 10px 0 17px;
 }
 
+@media (max-width: 600px) {
+  section.scoreBoard .counter {
+    font-size: 2.3rem;
+  }
+}
+
 section.scoreBoard .restartButton {
   position: absolute;
   right: 120px;
-  height: 50px;
   width: 60px;
-  font-size: 2.6rem;
+}
+
+section.scoreBoard .restartButton img {
+  opacity: 1;
+  -webkit-transition: opacity .6s;
+  transition: opacity .6s;
+}
+
+@media (max-width: 600px) {
+  section.scoreBoard .restartButton img {
+    width: 85%;
+  }
 }
 
 section.scoreBoard .restartButton:hover img {
@@ -879,15 +935,20 @@ section.scoreBoard .restartButton:hover img {
 
 section.scoreBoard .restartButton:hover .restart {
   opacity: 1;
-  font-size: 3.3rem;
+  font-size: 3rem;
+}
+
+@media (max-width: 600px) {
+  section.scoreBoard .restartButton:hover .restart {
+    font-size: 2.8rem;
+  }
 }
 
 section.scoreBoard .restart {
   opacity: 0;
   position: absolute;
-  font-size: 3.3rem;
-  -webkit-transition: .5s;
-  transition: .5s;
+  -webkit-transition: opacity .6s;
+  transition: opacity .6s;
 }
 
 .winMessage {

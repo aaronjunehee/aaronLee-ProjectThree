@@ -8,6 +8,11 @@ section .cardContainer {
     align-items: center;
     border-radius: 25px;
     box-shadow: 2px 2px 10px rgba(88, 88, 88, 0.534);
+    @include mq-600 {
+        width: 350px;
+        height: 350px;
+        margin: 10px;
+    }
 
     .card {
         width: 22.5%;
@@ -31,6 +36,10 @@ section .cardContainer {
         background-size: 140px;
         background-position: -9px -12px;
         background-repeat: no-repeat;
+        @include mq-600 {
+            background-size: 88px;
+            background-position: -4px -4px;
+        }
     }
 
     li:last-of-type .front {

@@ -12,7 +12,8 @@
 </head>
 <body> 
     <div class="wrapper">
-        <!-- cloud background animation with CSS -->
+
+        <!-- cloud background animation with CSS starts here -->
         <div id="clouds">
             <div class="cloud x1"></div>
             <div class="cloud x2"></div>
@@ -20,7 +21,8 @@
             <div class="cloud x4"></div>
             <div class="cloud x5"></div>
         </div>
-        <!-- opening home page with title and start button -->
+
+        <!-- opening home page with title and start button starts here -->
         <header>
             <div class="title">
                 <figure class="snackLogo logoSoftServe">
@@ -35,22 +37,28 @@
                 <button class="letsEat" aria-label="Click here to go to the game board"><span class="shake">Lets Eat!</span></button>
             </div>
         </header>
-        <!-- the main page with match game and scoreboard   -->
+
+        <!-- the main page with match memory game and scoreboard starts here  -->
         <main>
             <div class="flexContainer">
+
+                <!-- scoreboard starts here -->
                 <section class="scoreBoard">
                     <div class="movesCounter">
-                        <i class="fas fa-hand-point-down moves"></i>
+                        <i class="fas fa-hand-point-down moves" aria-hidden="true"></i>
+                        <span class="sr-only">Number of moves:</span>
                         <span class="counter">0</span>
                     </div>
                     <div class="restartButton">
-                        <i class="fas fa-undo-alt restart"></i>
-                        <img src="./styles/assets/snackMilk.png" alt="">
+                        <i class="fas fa-undo-alt restart" aria-label="Clicking on this icon will restart the game"></i>
+                        <img src="./styles/assets/snackMilk.png" alt="An illustration of a glass of milk with a cute smiling face in the middle of the class. The glass is about four fifths full and clear. Hovering over this image will reveal the refresh button.">
                     </div>
                     <div class="timeCounter">
-                        <span class="minutes">00</span>:<span class="seconds">00</span>
+                        <time class="minutes" aria-label="Minutes:">00</time>:<time class="seconds" aria-label="Seconds:">00</time>
                     </div>
-                </section>
+                </section> <!-- scoreboard ends here -->
+
+                <!-- match memory game starts here -->
                 <section class="cardSection">
                     <ul class="cardContainer">
                         <!-- <li class="card card1">
@@ -78,12 +86,15 @@
                             <button class="back"></button>
                         </li> -->
                     </ul>
-                </section>
+                </section> <!-- match memory game ends here -->
+
+                <!-- winning message starts here (display: none) -->
                 <section class="winMessage">
                     <p>You Win!</p>
                     <p>Score shown here</p>
                     <button class="resetButton">Play Again!</button>
-                </section>
+                </section> <!-- winning message ends here -->
+    
             </div> <!-- flexContainer ends here -->
         </main>
     </div> <!-- wrapper ends here -->

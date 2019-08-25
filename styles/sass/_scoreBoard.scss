@@ -1,0 +1,89 @@
+section.scoreBoard {
+    // note: exact same px width as cardContainer
+    width: 550px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+    @include mq-600 {
+        width: 350px;
+    }
+
+    .movesCounter, 
+    .timeCounter,
+    .restartButton {
+        background: rgba(254, 241, 166, 0.5);
+        border-radius: 20px;
+        padding: 6px 5px;
+        width: 95px;
+        box-shadow: 2px 2px 5px rgba(88, 88, 88, 0.534);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: $chewy;
+        color: lighten($purple, 15%);
+        height: 50px;
+        @include mq-600 {
+            height: 40px;
+        }
+    }
+
+    .timeCounter {
+        width: 110px;
+        font-size: 2.8rem;
+        @include mq-600 {
+            font-size: 2.3rem;
+        }
+    }
+
+    .moves { // hand-point-down icon
+        font-size: 3.4rem;
+        color: $white;
+        text-shadow: 2px 2px .5px $purple;
+        padding-left: 6px;
+        @include mq-600 {
+            font-size: 3rem;
+        }
+    }
+
+    .counter {
+        font-size: 2.8rem;
+        padding: 0 10px 0 17px;
+        @include mq-600 {
+            font-size: 2.3rem;
+        }
+        
+    }
+
+    .restartButton {
+        position: absolute;
+        right: 120px;
+        width: 60px;
+        img {
+            opacity: 1;
+            transition: opacity .6s;
+            @include mq-600 {
+                width: 85%;
+            }
+        }
+        &:hover {
+            img {
+                opacity: 0;
+            }
+            .restart {
+                opacity: 1;
+                font-size: 3rem;
+                @include mq-600 {
+                    font-size: 2.8rem;
+                }
+            }
+        }
+    }
+
+    .restart {
+        opacity: 0;
+        position: absolute;
+        transition: opacity .6s;
+    }
+}
+

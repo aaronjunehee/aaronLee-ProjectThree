@@ -6,7 +6,7 @@ html {
     width: 85%;
     max-width: 800px;
     margin: 0 auto;
-    @include mq-600 {
+    @include mq-700 {
         width: 95%;
     }
 }
@@ -38,12 +38,6 @@ img {
 }
 
 body {
-    // background-image: url(./assets/virgin.jpg);
-    // background-color: #00D5E4;
     background: #c9dbe9;
-
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
     font-size: 2rem;
 }
