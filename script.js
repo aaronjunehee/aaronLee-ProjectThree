@@ -10,76 +10,76 @@ snackApp.snacks = [
         url: './styles/assets/snackPizza.jpg',
         alt: 'words'
     },
-    {
-        id: 'fries',
-        url: './styles/assets/snackFries.jpg',
-        alt: 'words'
-    },
-    {
-        id: 'fries',
-        url: './styles/assets/snackFries.jpg',
-        alt: 'words'
-    },
-    {
-        id: 'bubble',
-        url: './styles/assets/snackBubble.jpg',
-        alt: 'words'
-    },
-    {
-        id: 'bubble',
-        url: './styles/assets/snackBubble.jpg',
-        alt: 'words'
-    },
-    {
-        id: 'cone',
-        url: './styles/assets/snackCone.jpg',
-        alt: 'words'
-    },
-    {
-        id: 'cone',
-        url: './styles/assets/snackCone.jpg',
-        alt: 'words'
-    },
-    {
-        id: 'chocolate',
-        url: './styles/assets/snackChocolate.jpg',
-        alt: 'words'
-    },
-    {
-        id: 'chocolate',
-        url: './styles/assets/snackChocolate.jpg',
-        alt: 'words'
-    },
-    {
-        id: 'banana',
-        url: './styles/assets/snackBanana.jpg',
-        alt: 'words'
-    },
-    {
-        id: 'banana',
-        url: './styles/assets/snackBanana.jpg',
-        alt: 'words'
-    },
-    {
-        id: 'candy',
-        url: './styles/assets/snackCandy.jpg',
-        alt: 'words'
-    },
-    {
-        id: 'candy',
-        url: './styles/assets/snackCandy.jpg',
-        alt: 'words'
-    },
-    {
-        id: 'popcorn',
-        url: './styles/assets/snackPop.jpg',
-        alt: 'words'
-    },
-    {
-        id: 'popcorn',
-        url: './styles/assets/snackPop.jpg',
-        alt: 'words'
-    }
+    // {
+    //     id: 'fries',
+    //     url: './styles/assets/snackFries.jpg',
+    //     alt: 'words'
+    // },
+    // {
+    //     id: 'fries',
+    //     url: './styles/assets/snackFries.jpg',
+    //     alt: 'words'
+    // },
+    // {
+    //     id: 'bubble',
+    //     url: './styles/assets/snackBubble.jpg',
+    //     alt: 'words'
+    // },
+    // {
+    //     id: 'bubble',
+    //     url: './styles/assets/snackBubble.jpg',
+    //     alt: 'words'
+    // },
+    // {
+    //     id: 'cone',
+    //     url: './styles/assets/snackCone.jpg',
+    //     alt: 'words'
+    // },
+    // {
+    //     id: 'cone',
+    //     url: './styles/assets/snackCone.jpg',
+    //     alt: 'words'
+    // },
+    // {
+    //     id: 'chocolate',
+    //     url: './styles/assets/snackChocolate.jpg',
+    //     alt: 'words'
+    // },
+    // {
+    //     id: 'chocolate',
+    //     url: './styles/assets/snackChocolate.jpg',
+    //     alt: 'words'
+    // },
+    // {
+    //     id: 'banana',
+    //     url: './styles/assets/snackBanana.jpg',
+    //     alt: 'words'
+    // },
+    // {
+    //     id: 'banana',
+    //     url: './styles/assets/snackBanana.jpg',
+    //     alt: 'words'
+    // },
+    // {
+    //     id: 'candy',
+    //     url: './styles/assets/snackCandy.jpg',
+    //     alt: 'words'
+    // },
+    // {
+    //     id: 'candy',
+    //     url: './styles/assets/snackCandy.jpg',
+    //     alt: 'words'
+    // },
+    // {
+    //     id: 'popcorn',
+    //     url: './styles/assets/snackPop.jpg',
+    //     alt: 'words'
+    // },
+    // {
+    //     id: 'popcorn',
+    //     url: './styles/assets/snackPop.jpg',
+    //     alt: 'words'
+    // }
     
 ]
 
@@ -175,7 +175,7 @@ snackApp.init = function() {
 }
 
 
-$('.startGame').on('click', function(){
+$('.letsEat').on('click', function(){
     $('header').fadeOut("slow");
     setTimeout(()=> {
         $('main:hidden').fadeIn("slow").addClass('show')

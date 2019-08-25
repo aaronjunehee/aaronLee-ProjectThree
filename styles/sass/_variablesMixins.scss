@@ -1,0 +1,44 @@
+// VARIABLES
+
+$yellow: rgb(255, 239, 157);
+$purple: #56396d;
+$blue: #c9dbe9;
+$white: rgb(255, 255, 255);
+
+$chewy: 'Chewy', cursive;
+$kalem: 'Kalam', cursive;
+
+
+// MIXINS
+
+    @mixin mq-1100 {
+        @media (max-width: 1100px) {
+            @content;
+        }
+    }
+
+    @mixin mq-900 {
+        @media (max-width: 900px) {
+            @content;
+        }
+    }
+
+    @mixin mq-700 {
+        @media (max-width: 700px) {
+            @content;
+        }
+    }
+
+    @mixin mq-600 {
+        @media (max-width: 600px) {
+            @content;
+        }
+    }
+
+    @mixin mq-500 {
+        @media (max-width: 500px) {
+            @content;
+        }
+    }
+
+    

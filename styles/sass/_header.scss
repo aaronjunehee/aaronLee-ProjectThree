@@ -1,115 +1,178 @@
-
-
 header {
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    position: relative;
-    
-}
-
-h1 {
-    font-family: 'Chewy', cursive;
-    color: white;
-    margin: 0;
-    padding-bottom: 100px;
-    // text-shadow: 4px 4px rgba(0, 0, 0, 0.726);
-    // box-shadow: -8px 8px #56396D;
-    text-shadow: -1px 1px 0px #56396d,
-    -2px 2px 0px #56396d,
-    -3px 3px 0px #56396d,
-    -4px 4px 0px #56396d,
-    -5px 5px 0px #56396d,
-    -6px 6px 0px #56396d,
-    -7px 7px 0px #56396d,
-    -8px 8px 0px #56396d,
-    -9px 9px 0px #56396d,
-    -10px 10px 0px #56396d,
-    -11px 11px 0px #56396d,
-    -12px 12px 0px #56396d,
-    2px 2px 3px rgba(0, 0, 0, 0.521);
-    font-size: 110px;
-    letter-spacing: 8px;
-    line-height: 110px;
-    position: relative;
-}
-
-h1, 
-p {
-    text-align: center;
-}
-
-.snackMatch {
-    display: block;
-    font-size: 90px;
-    letter-spacing: 5.5px;
-}
-
-.snackLogo {
-    width: 200px;
-    position: absolute;
-    margin-bottom: 40px;
-    animation: action 4s infinite;
-}
-.logoOne {
-    left: -120px;
-}
-.logoTwo {
-    right: -100px;
-}
-
-.startGame {
-    margin: 0 auto;
-    background: rgb(255, 239, 157);
-    width: 220px;
-    // padding: 15px 20px;
-    height: 80px;
-    border-radius: 40px;
-    font-family: 'Kalam', cursive;
-    font-size: 30px;
-    color: #56396d;
-    text-transform: uppercase;
-    border: 2px solid #56396d;
-    box-shadow: -5px 10px #56396d;
-    margin-top: -50px;
-    position: relative;
-}
-
-.startGame:hover {
-    animation: shake 2s linear infinite;
-   
-}
-
-.startGame:active {
-    position: relative;
-    top: 10px;
-    box-shadow: none;
-}
-
-@keyframes action {
-    0% { transform: rotate(0deg); }
-    25% { transform: rotate(-20deg); }
-    50% { transform: rotate(0deg); }
-    75% { transform: rotate(20deg); }
-    100% { transform: rotate(0deg); }
-}
-
-
-@keyframes shake {
-    10%, 50%, 60% {
-        transform: translateX(-2px);
+    .title { // flex container for h1
+        flex: 0 0 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        position: relative; // for the snack logos absolute positioning
+    }
+    .startButton { // flex container for start button
+        flex: 0 0 30%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
-    15%, 45%, 55% {
-        transform: translateX(3px);
+
+    h1 { // styles for the title banner
+        font-family: $chewy;
+        color: $white;
+        text-shadow:-1px 1px 0px #56396d,
+        -2px 2px 0px #56396d,
+        -3px 3px 0px #56396d,
+        -4px 4px 0px #56396d,
+        -5px 5px 0px #56396d,
+        -6px 6px 0px #56396d,
+        -7px 7px 0px #56396d,
+        -8px 8px 0px #56396d,
+        -9px 9px 0px #56396d,
+        -10px 10px 0px #56396d,
+        -11px 11px 0px #56396d,
+        -12px 12px 0px #56396d,
+        2px 2px 3px rgba(0, 0, 0, 0.521);
+        font-size: 11rem;
+        letter-spacing: .9rem;
+        line-height: 10.5rem;
+        text-align: center;
+
+        .h1LineBreak {
+            display: block;
+            font-size: 9rem;
+            letter-spacing: .55rem;
+            @include mq-700 {
+                font-size: 7.5rem;
+            }
+            @include mq-500 {
+                font-size: 7.5rem;
+                line-height: 8rem;
+                letter-spacing: .30rem;
+            }
+        }
+        @include mq-700 {
+            font-size: 9rem;
+            line-height: 9.5rem;
+        }
+        @include mq-500 {
+            font-size: 6.5rem;
+            letter-spacing: .40rem;
+            line-height: 8rem;
+        }
+
     }
 
-    20%, 30%, 40% {
-        transform: translateX(-4px);
+
+    .snackLogo { // styles for the rotating snack images 
+        width: 200px;
+        position: absolute;
+        animation: tilting 4s infinite;
+        @include mq-1100 {
+            width: 150px;  
+        }
+        @include mq-900 {
+            width: 130px;  
+        }
+        @include mq-700 {
+            width: 110px;  
+        }
+    }
+    .logoSoftServe {
+        margin-bottom: -60px;
+        left: -130px;
+        @include mq-1100 {
+            bottom: -150px;
+            left: 100px;
+        }
+        @include mq-900 {
+            bottom: -140px;
+            left: 70px;
+        }
+        @include mq-700 {
+            bottom: -120px;
+            left: 30px;
+        }
+        @include mq-600 {
+            display: none;
+        }
+
+    }
+    .logoFries {
+        right: -110px;
+        @include mq-1100 {
+            bottom: -160px;
+            right: 100px;
+        }
+        @include mq-900 {
+            bottom: -160px;
+            right: 80px;
+        }
+        @include mq-700 {
+            bottom: -150px;
+            right: 40px;
+        }
+        @include mq-600 {
+            display: none;
+        }
+    }
+    @keyframes tilting {
+        0% { transform: rotate(0deg); }
+        25% { transform: rotate(-20deg); }
+        50% { transform: rotate(0deg); }
+        75% { transform: rotate(20deg); }
+        100% { transform: rotate(0deg); }
     }
 
-    25%, 35% {
-        transform: translateX(4px);
+
+    .letsEat { // styles for start button
+        background: $yellow;
+        border-radius: 40px;
+        width: 220px;
+        height: 80px;
+        font-family: $kalem;
+        font-size: 3rem;
+        color: $purple;
+        text-transform: uppercase;
+        border: 2px solid $purple;
+        box-shadow: -5px 10px $purple;
+        margin-top: -40px;
+        position: relative;
+        transition: all .3s;
+        
+        &:hover,
+        &:focus {
+            height: 100px;
+            width: 250px;
+            animation: shake 2s infinite;
+        }
+
+        &:active {
+            position: relative;
+            top: 10px;
+            box-shadow: none;
+        }
+
+        &:focus {
+            border: 5px dotted $purple;
+        }
+
+        @keyframes shake {
+            10%, 50%, 60% {
+                transform: translateX(-2px);
+            }
+            15%, 45%, 55% {
+                transform: translateX(3px);
+            }
+            20%, 30%, 40% {
+                transform: translateX(-4px);
+            }
+            25%, 35% {
+                transform: translateX(4px);
+            }
+        }
     }
-}
+} // end of header styles

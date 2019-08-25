@@ -12,26 +12,30 @@
 </head>
 <body> 
     <div class="wrapper">
-    
-    <div id="clouds">
-        <div class="cloud x1"></div>
-        <!-- Time for multiple clouds to dance around -->
-        <div class="cloud x2"></div>
-        <div class="cloud x3"></div>
-        <div class="cloud x4"></div>
-        <div class="cloud x5"></div>
-    </div>
+        <!-- cloud background animation with CSS -->
+        <div id="clouds">
+            <div class="cloud x1"></div>
+            <div class="cloud x2"></div>
+            <div class="cloud x3"></div>
+            <div class="cloud x4"></div>
+            <div class="cloud x5"></div>
+        </div>
+        <!-- opening home page with title and start button -->
         <header>
-            <div class="snackLogo logoOne">
-                <img src="./styles/assets/snackSoftServe.png" alt="">
+            <div class="title">
+                <figure class="snackLogo logoSoftServe">
+                    <img src="./styles/assets/snackLogoSoftServe.png" alt="This image is an illustrated picture of strawberry flavoured soft serve in a short yellow cone. The soft serve is animated to turn left and right and has a satisfied look on their face. This face is drawn on the bottom end of the soft serve; the hair is made to resemble the top portion of soft serve and the cone its body.">
+                </figure>
+            	<h1>Afternoon <span class="h1LineBreak">Snack Match!</span></h1>
+                <figure class="snackLogo logoFries">
+                    <img src="./styles/assets/snackLogoFries.png" alt="This image is an illustrated version of fast food french fries with a face drawn on it. Their expression is happy and smiley. The fries are yellow and sticking out of the fry container as if it were their hair. The face is drawn on the fry container which is red with a single red stripe drawn across it. This illustration is also rocking back and forth in tandem with the strawberry flavoured soft serve.">
+                </figure>
             </div>
-            <h1>Afternoon <span class="snackMatch">Snack Match!</span></h1>
-            <div class="snackLogo logoTwo">
-                <img src="./styles/assets/snackFries.png" alt="">
+            <div class="startButton">
+                <button class="letsEat" aria-label="Click here to go to the game board"><span class="shake">Lets Eat!</span></button>
             </div>
-            <button class="startGame">Lets Eat!</button>
-            
         </header>
+        <!-- the main page with board game and scoreboard   -->
         <main>
             <div class="mainWrapper">
                 <section class="gameStats">
@@ -78,11 +82,11 @@
                 <section class="winMessage">
                     <p>You Win!</p>
                     <p>Score shown here</p>
-                    <button class="resetButton">Press here to play again</button>
+                    <button class="resetButton">Play Again!</button>
                 </section>
             </div>
         </main>
-    </div>
+    </div> <!-- wrapper ends here -->
 
     <script src='https://code.jquery.com/jquery-3.4.0.min.js' integrity='sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=' crossorigin='anonymous'></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>

@@ -2,9 +2,19 @@
     display: none;
     width: 40%;
     height: 55%;
-    background: red;
+    background: rgb(255, 239, 157);
     position: absolute;
     left: 30%;
+    font-family: 'Kalam', cursive;
+    color: #56396d;
+    font-size: 4rem;
+    box-shadow: 2px 2px 10px rgba(88, 88, 88, 0.534);
+    border-radius: 25px;
+    .resetButton {
+        border-radius: 10px;
+        display: block;
+        margin: 0 auto;
+    }
 }
 
 .winMessage.userWon {
