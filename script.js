@@ -125,12 +125,14 @@ snackApp.displaySnacks = (snackArray) => {
 snackApp.userClick = function () {
     $('.cardContainer').on('click', '.card', function () {
         $(this).addClass('show selected')
-        if ($('.selected').length == 2) {
+        if($('.selected').length == 1) {
             moveCounter();
+        }
+        if ($('.selected').length == 2) {
             
             // for when cards match
             if ($('.selected').first().attr('id') == $('.selected').last().attr('id')) {
-                $('.selected').addClass('wiggle')
+                $('.selected').addClass('wiggle');
                 setTimeout(() => {
                     
                     $('.selected').removeClass('selected').addClass('matched');
@@ -157,13 +159,12 @@ let move = 0;
 function moveCounter() {
     move = move + 1;
     $('.counter').text(move);
-}
-
-const checkWin = function () {
-    if ($('.card.matched').length === snackApp.snacks.length) {
-        alert('You WIN!! You get a snack')
+    if(move==1){
+        startTimer();
     }
 }
+
+
 
 
 
@@ -178,16 +179,64 @@ $('.startGame').on('click', function(){
     $('header').fadeOut("slow");
     setTimeout(()=> {
         $('main:hidden').fadeIn("slow").addClass('show')
-       
+
     }, 600)
-    // setTimeout(()=> {
-    //     $('main').addClass('show');
-    //     $('header').addClass('hide');
-    // }, 500)
-    // setTimeout(()=> {
-    //     $('main').addClass('transition');
-    // },1000)
 })
+
+
+
+
+
+
+let $min = $('.minutes');
+let $sec = $('.seconds');
+let totalSec = 0;
+
+function setTime() {
+    ++totalSec;
+    $sec.text(pad(totalSec % 60));
+    $min.text(pad(parseInt(totalSec / 60)));
+}
+function pad(time) {
+    let timeString = time + "";
+    if (timeString.length < 2) {
+        return "0" + timeString;
+    } else {
+        return timeString;
+    }
+}
+
+function startTimer() {
+    interval = setInterval(setTime, 1000);
+}
+
+
+
+
+
+const checkWin = function () {
+    if ($('.card.matched').length === snackApp.snacks.length) {
+        // swal(`You WIN!! You get a snack ${totalSec}`);
+        $('.winMessage').addClass('userWon');
+        console.log(`${totalSec} ${move}`);
+        clearInterval(interval);
+        
+        $('.resetButton').on('click', function () {
+            console.log("hello");
+            $sec.text('00');
+            $min.text('00');
+            $('.counter').text('00');
+            move = 0;
+            $('.winMessage').removeClass('userWon');
+            $('.card').remove();
+            let randomizedSnacks = snackApp.shuffle(snackApp.snacks);
+            snackApp.displaySnacks(randomizedSnacks);
+        });
+
+
+    }
+}
+
 
 $(document).ready(function(){
     snackApp.init();

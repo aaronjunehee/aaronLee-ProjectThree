@@ -12,7 +12,7 @@ body {
 
 #clouds {
     position: absolute;
-    top: 180px;
+    top: 350px;
     right: 0;
     left: 0;
     bottom: 0;
@@ -63,9 +63,9 @@ body {
 .x2 {
 	left: 200px;
 	
-	-webkit-transform: scale(0.6);
-	-moz-transform: scale(0.6);
-	transform: scale(0.6);
+	-webkit-transform: scale(1.2);
+	-moz-transform: scale(1.2);
+	transform: scale(1.2);
 	opacity: 0.6; /*opacity proportional to the size*/
 	
 	/*Speed will also be proportional to the size and opacity*/
@@ -78,9 +78,9 @@ body {
 .x3 {
 	left: -250px; top: -200px;
 	
-	-webkit-transform: scale(0.8);
-	-moz-transform: scale(0.8);
-	transform: scale(0.8);
+	-webkit-transform: scale(2);
+	-moz-transform: scale(2);
+	transform: scale(2);
 	opacity: 0.8; /*opacity proportional to the size*/
 	
 	-webkit-animation: moveclouds 30s linear infinite;
@@ -96,17 +96,17 @@ body {
 	transform: scale(0.75);
 	opacity: 0.75; /*opacity proportional to the size*/
 	
-	-webkit-animation: moveclouds 18s linear infinite;
-	-moz-animation: moveclouds 18s linear infinite;
-	-o-animation: moveclouds 18s linear infinite;
+	-webkit-animation: moveclouds 15s linear infinite;
+	-moz-animation: moveclouds 15s linear infinite;
+	-o-animation: moveclouds 15s linear infinite;
 }
 
 .x5 {
 	left: -150px; top: -150px;
 	
-	-webkit-transform: scale(0.8);
-	-moz-transform: scale(0.8);
-	transform: scale(0.8);
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	transform: scale(1);
 	opacity: 0.8; /*opacity proportional to the size*/
 	
 	-webkit-animation: moveclouds 20s linear infinite;
@@ -116,7 +116,7 @@ body {
 
 @-webkit-keyframes moveclouds {
 	0% {margin-left: 2000px;}
-	100% {margin-left: -1000px;}
+	100% {margin-left: -500px;}
 }
 @-moz-keyframes moveclouds {
 	0% {margin-left: 2000px;}

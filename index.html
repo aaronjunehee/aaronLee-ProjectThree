@@ -35,10 +35,15 @@
         <main>
             <div class="mainWrapper">
                 <section class="gameStats">
-                    <i class="far fa-hand-point-down"></i>
+                    <div class="movesCounter">
+                        <i class="fas fa-hand-point-down moves"></i>
                         <span class="counter">0</span>
+                    </div>
+                    <div class="timeCounter">
+                        <span class="minutes">00</span>:<span class="seconds">00</span>
+                    </div>
                 </section>
-                <section>
+                <section class="cardSection">
                     <ul class="cardContainer">
                         <!-- <li class="card card1">
                             <button class="front">I'm the front!</button>
@@ -65,13 +70,18 @@
                             <button class="back"></button>
                         </li> -->
                     </ul>
-
+                </section>
+                <section class="winMessage">
+                    <p>You Win!</p>
+                    <p>Score shown here</p>
+                    <button class="resetButton">Press here to play again</button>
                 </section>
             </div>
         </main>
     </div>
 
     <script src='https://code.jquery.com/jquery-3.4.0.min.js' integrity='sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=' crossorigin='anonymous'></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="./script.js"></script>
 </body>
 </html>

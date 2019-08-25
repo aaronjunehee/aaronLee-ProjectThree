@@ -179,6 +179,10 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   overflow: hidden;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 .wrapper {
   width: 85%;
   max-width: 800px;
@@ -212,6 +216,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  font-size: 2rem;
 }
 
 body {
@@ -227,7 +232,7 @@ body {
 
 #clouds {
   position: absolute;
-  top: 180px;
+  top: 350px;
   right: 0;
   left: 0;
   bottom: 0;
@@ -280,8 +285,8 @@ body {
 /*variable speed, opacity, and position of clouds for realistic effect*/
 .x2 {
   left: 200px;
-  -webkit-transform: scale(0.6);
-  transform: scale(0.6);
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
   opacity: 0.6;
   /*opacity proportional to the size*/
   /*Speed will also be proportional to the size and opacity*/
@@ -294,8 +299,8 @@ body {
 .x3 {
   left: -250px;
   top: -200px;
-  -webkit-transform: scale(0.8);
-  transform: scale(0.8);
+  -webkit-transform: scale(2);
+  transform: scale(2);
   opacity: 0.8;
   /*opacity proportional to the size*/
   -webkit-animation: moveclouds 30s linear infinite;
@@ -310,16 +315,16 @@ body {
   transform: scale(0.75);
   opacity: 0.75;
   /*opacity proportional to the size*/
-  -webkit-animation: moveclouds 18s linear infinite;
-  -moz-animation: moveclouds 18s linear infinite;
-  -o-animation: moveclouds 18s linear infinite;
+  -webkit-animation: moveclouds 15s linear infinite;
+  -moz-animation: moveclouds 15s linear infinite;
+  -o-animation: moveclouds 15s linear infinite;
 }
 
 .x5 {
   left: -150px;
   top: -150px;
-  -webkit-transform: scale(0.8);
-  transform: scale(0.8);
+  -webkit-transform: scale(1);
+  transform: scale(1);
   opacity: 0.8;
   /*opacity proportional to the size*/
   -webkit-animation: moveclouds 20s linear infinite;
@@ -332,7 +337,7 @@ body {
     margin-left: 2000px;
   }
   100% {
-    margin-left: -1000px;
+    margin-left: -500px;
   }
 }
 
@@ -354,6 +359,8 @@ header {
 h1 {
   font-family: 'Chewy', cursive;
   color: white;
+  margin: 0;
+  padding-bottom: 100px;
   text-shadow: -1px 1px 0px #56396d, -2px 2px 0px #56396d, -3px 3px 0px #56396d, -4px 4px 0px #56396d, -5px 5px 0px #56396d, -6px 6px 0px #56396d, -7px 7px 0px #56396d, -8px 8px 0px #56396d, -9px 9px 0px #56396d, -10px 10px 0px #56396d, -11px 11px 0px #56396d, -12px 12px 0px #56396d, 2px 2px 3px rgba(0, 0, 0, 0.521);
   font-size: 110px;
   letter-spacing: 8px;
@@ -398,9 +405,10 @@ p {
   font-size: 30px;
   color: #56396d;
   text-transform: uppercase;
-  -webkit-box-shadow: 5px 10px #56396d;
-          box-shadow: 5px 10px #56396d;
-  margin-top: -20px;
+  border: 2px solid #56396d;
+  -webkit-box-shadow: -5px 10px #56396d;
+          box-shadow: -5px 10px #56396d;
+  margin-top: -50px;
   position: relative;
 }
 
@@ -500,7 +508,7 @@ p {
   }
 }
 
-section {
+section.cardSection {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -661,4 +669,70 @@ main {
   /* apply animation */
   -webkit-animation: wiggle 1s;
           animation: wiggle 1s;
+}
+
+section.gameStats {
+  width: 550px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+section.gameStats .movesCounter,
+section.gameStats .timeCounter {
+  background: rgba(254, 241, 166, 0.5);
+  border-radius: 20px;
+  padding: 6px 5px;
+  width: 95px;
+  -webkit-box-shadow: 2px 2px 5px rgba(88, 88, 88, 0.534);
+          box-shadow: 2px 2px 5px rgba(88, 88, 88, 0.534);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: 'Chewy', cursive;
+  color: #604079d3;
+}
+
+section.gameStats .timeCounter {
+  width: 110px;
+  height: 50px;
+  font-size: 2.8rem;
+}
+
+section.gameStats .moves {
+  font-size: 3.4rem;
+  color: white;
+  text-shadow: 2px 2px .5px #604079d3;
+  padding-left: 6px;
+}
+
+section.gameStats .counter {
+  font-size: 2.8rem;
+  padding: 0 10px 0 17px;
+}
+
+.winMessage {
+  display: none;
+  width: 40%;
+  height: 55%;
+  background: red;
+  position: absolute;
+  left: 30%;
+}
+
+.winMessage.userWon {
+  display: block;
 }

@@ -12,6 +12,8 @@ header {
 h1 {
     font-family: 'Chewy', cursive;
     color: white;
+    margin: 0;
+    padding-bottom: 100px;
     // text-shadow: 4px 4px rgba(0, 0, 0, 0.726);
     // box-shadow: -8px 8px #56396D;
     text-shadow: -1px 1px 0px #56396d,
@@ -68,8 +70,9 @@ p {
     font-size: 30px;
     color: #56396d;
     text-transform: uppercase;
-    box-shadow: 5px 10px #56396d;
-    margin-top: -20px;
+    border: 2px solid #56396d;
+    box-shadow: -5px 10px #56396d;
+    margin-top: -50px;
     position: relative;
 }
 
