@@ -3,109 +3,112 @@ snackApp.snacks = [
     {
         id: 'pizza',
         url: './styles/assets/snackPizza.jpg',
-        alt: 'words',
+        alt: 'A smiling slice of pizza',
         title: 'cookie card front',
         'aria-label': 'Illustration of a cute cookie with its eyes closed and smiling with red rosy cheeks. Clicking on this cookie card will flip it over to reveal the random snack behind it'
     },
     {
         id: 'pizza',
         url: './styles/assets/snackPizza.jpg',
-        alt: 'words',
+        alt: 'A smiling slice of pizza',
         title: 'cookie card front',
         'aria-label': 'Illustration of a cute cookie with its eyes closed and smiling with red rosy cheeks. Clicking on this cookie card will flip it over to reveal the random snack behind it'
     },
     {
         id: 'fries',
         url: './styles/assets/snackFries.jpg',
-        alt: 'words',
+        alt: 'A smiling to-go container of fries',
         title: 'cookie card front',
         'aria-label': 'Illustration of a cute cookie with its eyes closed and smiling with red rosy cheeks. Clicking on this cookie card will flip it over to reveal the random snack behind it'
     },
     {
         id: 'fries',
         url: './styles/assets/snackFries.jpg',
-        alt: 'words',
+        alt: 'A smiling to-go container of fries',
         title: 'cookie card front',
         'aria-label': 'Illustration of a cute cookie with its eyes closed and smiling with red rosy cheeks. Clicking on this cookie card will flip it over to reveal the random snack behind it'
     },
     {
         id: 'bubble',
         url: './styles/assets/snackBubble.jpg',
-        alt: 'words',
+        alt: 'A winking cup of green bubble tea with pearls',
         title: 'cookie card front',
         'aria-label': 'Illustration of a cute cookie with its eyes closed and smiling with red rosy cheeks. Clicking on this cookie card will flip it over to reveal the random snack behind it'
     },
     {
         id: 'bubble',
         url: './styles/assets/snackBubble.jpg',
-        alt: 'words',
+        alt: 'A winking cup of green bubble tea with pearls',
         title: 'cookie card front',
         'aria-label': 'Illustration of a cute cookie with its eyes closed and smiling with red rosy cheeks. Clicking on this cookie card will flip it over to reveal the random snack behind it'
     },
     {
         id: 'cone',
         url: './styles/assets/snackCone.jpg',
-        alt: 'words',
+        alt: 'A double scoop of ice-cream, top scoop smiling vanilla, bottom scoop winking chocolate and with a cherry on top',
         title: 'cookie card front',
         'aria-label': 'Illustration of a cute cookie with its eyes closed and smiling with red rosy cheeks. Clicking on this cookie card will flip it over to reveal the random snack behind it'
     },
     {
         id: 'cone',
         url: './styles/assets/snackCone.jpg',
-        alt: 'words',
+        alt: 'A double scoop of ice-cream, top scoop smiling vanilla, bottom scoop winking chocolate and with a cherry on top',
         title: 'cookie card front',
         'aria-label': 'Illustration of a cute cookie with its eyes closed and smiling with red rosy cheeks. Clicking on this cookie card will flip it over to reveal the random snack behind it'
     },
     {
         id: 'chocolate',
         url: './styles/assets/snackChocolate.jpg',
-        alt: 'words',
+        alt: 'A half opened bar of smiling chocolate covered in a red wrapper',
         title: 'cookie card front',
         'aria-label': 'Illustration of a cute cookie with its eyes closed and smiling with red rosy cheeks. Clicking on this cookie card will flip it over to reveal the random snack behind it'
     },
     {
         id: 'chocolate',
         url: './styles/assets/snackChocolate.jpg',
-        alt: 'words',
-    },
-    {
-        id: 'banana',
-        url: './styles/assets/snackBanana.jpg',
-        alt: 'words',
+        alt: 'A half opened bar of smiling chocolate covered in a red wrapper',
         title: 'cookie card front',
         'aria-label': 'Illustration of a cute cookie with its eyes closed and smiling with red rosy cheeks. Clicking on this cookie card will flip it over to reveal the random snack behind it'
     },
     {
         id: 'banana',
         url: './styles/assets/snackBanana.jpg',
-        alt: 'words',
+        alt: 'Three joyful yet slighly embarrassed yellow bananas attached at the stem',
+        title: 'cookie card front',
+        'aria-label': 'Illustration of a cute cookie with its eyes closed and smiling with red rosy cheeks. Clicking on this cookie card will flip it over to reveal the random snack behind it'
+    },
+    {
+        id: 'banana',
+        url: './styles/assets/snackBanana.jpg',
+        alt: 'Three joyful yet slighly embarrassed yellow bananas attached at the stem',
         title: 'cookie card front',
         'aria-label': 'Illustration of a cute cookie with its eyes closed and smiling with red rosy cheeks. Clicking on this cookie card will flip it over to reveal the random snack behind it'
     },
     {
         id: 'candy',
         url: './styles/assets/snackCandy.jpg',
-        alt: 'words',
+        alt: 'A smiling pink lollipop standing on its stick upright with a pink background',
         title: 'cookie card front',
         'aria-label': 'Illustration of a cute cookie with its eyes closed and smiling with red rosy cheeks. Clicking on this cookie card will flip it over to reveal the random snack behind it'
     },
     {
         id: 'candy',
         url: './styles/assets/snackCandy.jpg',
-        alt: 'words',
-        title: 'cookie card front'
-    },
-    {
-        id: 'popcorn',
-        url: './styles/assets/snackPop.jpg',
-        alt: 'words',
+        alt: 'A smiling pink lollipop standing on its stick upright with a pink background',
         title: 'cookie card front',
         'aria-label': 'Illustration of a cute cookie with its eyes closed and smiling with red rosy cheeks. Clicking on this cookie card will flip it over to reveal the random snack behind it'
     },
     {
         id: 'popcorn',
         url: './styles/assets/snackPop.jpg',
-        alt: 'words',
+        alt: 'A red and white stripped bag of smiling popcorn',
+        title: 'cookie card front',
+        'aria-label': 'Illustration of a cute cookie with its eyes closed and smiling with red rosy cheeks. Clicking on this cookie card will flip it over to reveal the random snack behind it'
+    },
+    {
+        id: 'popcorn',
+        url: './styles/assets/snackPop.jpg',
+        alt: 'A red and white stripped bag of smiling popcorn',
         title: 'cookie card front',
         'aria-label': 'Illustration of a cute cookie with its eyes closed and smiling with red rosy cheeks. Clicking on this cookie card will flip it over to reveal the random snack behind it'
     }
@@ -178,7 +181,6 @@ snackApp.userClick = function () {
 }
 
 
-
 // function containing event listener on title page; when user clicks, the title disappears and the memory card game appears
 snackApp.startGame = function() {
     $('.letsEat').on('click', function () {
@@ -188,7 +190,6 @@ snackApp.startGame = function() {
         }, 600)
     });
 }
-
 
 
 // function to count the NUMER OF MOVES the user makes; moves starts at 0 and increases 1 point every time the number of the cards with class 'selected' is == 1 (ie. does not increase point when user clicks second time and number of cards with class of 'selected is == 2)
@@ -273,7 +274,6 @@ snackApp.init = function () {
     snackApp.startGame();
     snackApp.userClick();
     snackApp.restartGame();
-
 }
 
 

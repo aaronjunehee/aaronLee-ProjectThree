@@ -734,6 +734,11 @@ section .cardContainer .back {
           backface-visibility: hidden;
 }
 
+section .cardContainer .front:focus,
+section .cardContainer .back:focus {
+  border: 3px dashed #56396d;
+}
+
 section .cardContainer .front {
   background-image: url(./assets/cookieFront.png);
   background-color: transparent;

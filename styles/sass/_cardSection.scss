@@ -28,6 +28,9 @@ section .cardContainer {
         position: absolute;
         transition:all 0.5s;
         backface-visibility:hidden;
+        &:focus {
+            border: 3px dashed $purple;      
+        }
     }
 
     .front {
