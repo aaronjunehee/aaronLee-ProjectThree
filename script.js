@@ -109,10 +109,9 @@ snackApp.snacks = [
         title: 'cookie card front',
         'aria-label': 'Illustration of a cute cookie with its eyes closed and smiling with red rosy cheeks. Clicking on this cookie card will flip it over to reveal the random snack behind it'
     }
-    
 ]
 
-// Fisher-Yates Shuffle 
+// Fisher-Yates Shuffle (function to randomly shuffle 'snacks' into 'randomizedSnacks')
 snackApp.shuffle = function (array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
 
@@ -128,10 +127,7 @@ snackApp.shuffle = function (array) {
 
 
 
-
-
-
-
+// Function to append the randomizedSnacks onto our DOM and display the randomizedSnack cards on the user interface
 snackApp.displaySnacks = (snackArray) => {
     snackArray.forEach( (snackItem) => {
         const listTag = $('<li>').addClass('card').attr('id', snackItem.id);;
@@ -144,9 +140,7 @@ snackApp.displaySnacks = (snackArray) => {
         listTag.append(buttonFront, buttonBack);
         $('.cardContainer').append(listTag);
     })
-
 }
-
 
 
 
@@ -155,7 +149,7 @@ snackApp.userClick = function () {
     $('.cardContainer').on('click', '.card', function () {
         $(this).addClass('show selected')
         if($('.selected').length == 1) {
-            moveCounter();
+            snackApp.moveCounter();
         }
         if ($('.selected').length == 2) {
             
@@ -165,7 +159,7 @@ snackApp.userClick = function () {
                 setTimeout(() => {
                     
                     $('.selected').removeClass('selected').addClass('matched');
-                    checkWin();
+                    snackApp.checkWin();
                 }, 1000)
 
             // for when cards don't match
@@ -184,80 +178,73 @@ snackApp.userClick = function () {
 }
 
 
+
+// function containing event listener on title page; when user clicks, the title disappears and the memory card game appears
+snackApp.startGame = function() {
+    $('.letsEat').on('click', function () {
+        $('header').fadeOut("slow");
+        setTimeout(() => {
+            $('main:hidden').fadeIn("slow").addClass('show')
+        }, 600)
+    });
+}
+
+
+
+// function to count the NUMER OF MOVES the user makes; moves starts at 0 and increases 1 point every time the number of the cards with class 'selected' is == 1 (ie. does not increase point when user clicks second time and number of cards with class of 'selected is == 2)
 let move = 0;
-function moveCounter() {
+snackApp.moveCounter = function () {
     move = move + 1;
     $('.counter').text(move);
     if(move==1){
-        startTimer();
+        snackApp.startTimer();
     }
 }
 
 
-
-
-
-snackApp.init = function() {
-    let randomizedSnacks = snackApp.shuffle(snackApp.snacks);
-    snackApp.displaySnacks(randomizedSnacks);
-    snackApp.userClick();
-}
-
-
-$('.letsEat').on('click', function(){
-    $('header').fadeOut("slow");
-    setTimeout(()=> {
-        $('main:hidden').fadeIn("slow").addClass('show')
-
-    }, 600)
-})
-
-
-
-
-
-
+// variables and functions for the timer - user must click on a card before the timer starts and will run until user completes the card challenge. Time will then restart from 0 on next game. 
 let $min = $('.minutes');
 let $sec = $('.seconds');
 let totalSec = 0;
 
-function setTime() {
-    ++totalSec;
-    $sec.text(pad(totalSec % 60));
-    $min.text(pad(parseInt(totalSec / 60)));
-}
-function pad(time) {
-    let timeString = time + "";
-    if (timeString.length < 2) {
-        return "0" + timeString;
-    } else {
-        return timeString;
+snackApp.startTimer = function () {
+    setTime = function () {
+        ++totalSec;
+        $sec.text(pad(totalSec % 60));
+        $min.text(pad(parseInt(totalSec / 60)));
     }
-}
 
-function startTimer() {
+    pad = function (time) {
+        let timeString = time + "";
+        if (timeString.length < 2) {
+            return "0" + timeString;
+        } else {
+            return timeString;
+        }
+    }
     interval = setInterval(setTime, 1000);
 }
 
 
-$('.restartButton').on('click', function(){
-    clearInterval(interval);
-    totalSec = 0;
-    $sec.text('00');
-    $min.text('00');
-    $('.counter').text('0');
-    move = 0;
-    $('.card').remove();
-    let randomizedSnacks = snackApp.shuffle(snackApp.snacks);
-    snackApp.displaySnacks(randomizedSnacks);
-})
+// function containing an event listener attached to the restart button; when clicked, everything will restart
+snackApp.restartGame = function(){
+    $('.restartButton').on('click', function () {
+        clearInterval(interval);
+        totalSec = 0;
+        $sec.text('00');
+        $min.text('00');
+        $('.counter').text('0');
+        move = 0;
+        $('.card').remove();
+        let randomizedSnacks = snackApp.shuffle(snackApp.snacks);
+        snackApp.displaySnacks(randomizedSnacks);
+    });
+}
 
 
-
-
-const checkWin = function () {
+// function that checks when all the cards have been matched; this function is called everytime a true match has occured between two cards; if true (ie. when all the cards are matched), the winning message will appear with the users score; a reset button will also apear and when clicked will restart the game for the user.
+snackApp.checkWin = function () {
     if ($('.card.matched').length === snackApp.snacks.length) {
-        // swal(`You WIN!! You get a snack ${totalSec}`);
         $('.winMessage').addClass('userWon');
         console.log(`${totalSec} ${move}`);
         $('.score').html(`You ate those snacks in ${totalSec} seconds with only ${move} moves!`)
@@ -276,13 +263,20 @@ const checkWin = function () {
             let randomizedSnacks = snackApp.shuffle(snackApp.snacks);
             snackApp.displaySnacks(randomizedSnacks);
         });
-
-
     }
+}
+
+
+snackApp.init = function () {
+    let randomizedSnacks = snackApp.shuffle(snackApp.snacks);
+    snackApp.displaySnacks(randomizedSnacks);
+    snackApp.startGame();
+    snackApp.userClick();
+    snackApp.restartGame();
+
 }
 
 
 $(document).ready(function(){
     snackApp.init();
-
 });
