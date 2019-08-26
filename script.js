@@ -114,6 +114,7 @@ snackApp.snacks = [
     }
 ]
 
+
 // Fisher-Yates Shuffle (function to randomly shuffle 'snacks' into 'randomizedSnacks')
 snackApp.shuffle = function (array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
@@ -129,13 +130,12 @@ snackApp.shuffle = function (array) {
 }
 
 
-
 // Function to append the randomizedSnacks onto our DOM and display the randomizedSnack cards on the user interface
 snackApp.displaySnacks = (snackArray) => {
     snackArray.forEach( (snackItem) => {
         const listTag = $('<li>').addClass('card').attr('id', snackItem.id);;
         const buttonFront = $('<button>').addClass('front').attr('title', snackItem.title).attr('aria-label', snackItem['aria-label']);
-        const buttonBack = $('<button>').addClass('back');
+        const buttonBack = $('<div>').addClass('back');
         const image = $('<img>').attr('src', snackItem.url).attr('alt', snackItem.alt);
 
         buttonBack.append(image);
@@ -144,7 +144,6 @@ snackApp.displaySnacks = (snackArray) => {
         $('.cardContainer').append(listTag);
     })
 }
-
 
 
 // on user click, class of 'selected' is attached to clicked card and checked if the subsequent clicked card is a match or not
@@ -160,7 +159,6 @@ snackApp.userClick = function () {
             if ($('.selected').first().attr('id') == $('.selected').last().attr('id')) {
                 $('.selected').addClass('wiggle');
                 setTimeout(() => {
-                    
                     $('.selected').removeClass('selected').addClass('matched');
                     snackApp.checkWin();
                 }, 1000)
@@ -169,7 +167,6 @@ snackApp.userClick = function () {
             } else {
                 setTimeout(() => {
                     $('.card').removeClass('show selected');
-
                 }, 1000)
             }
 
@@ -247,14 +244,12 @@ snackApp.restartGame = function(){
 snackApp.checkWin = function () {
     if ($('.card.matched').length === snackApp.snacks.length) {
         $('.winMessage').addClass('userWon');
-        console.log(`${totalSec} ${move}`);
         $('.score').html(`You ate those snacks in ${totalSec} seconds with only ${move} moves!`)
         clearInterval(interval);
         
         $('.resetButton').on('click', function () {
             clearInterval(interval);
             totalSec = 0;
-            console.log("hello");
             $sec.text('00');
             $min.text('00');
             $('.counter').text('0');

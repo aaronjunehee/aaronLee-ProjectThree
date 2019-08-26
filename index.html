@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./styles/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Chewy&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Kalam&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Chewy|Kalam&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/d71e047b5b.js"></script>
-    <title>Document</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="./styles/assets/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./styles/assets/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./styles/assets/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="./styles/assets/favicon_io/site.webmanifest">
+    <title>Afternoon Snack Match!</title>
 </head>
 <body> 
     <div class="wrapper">
@@ -49,10 +52,10 @@
                         <span class="sr-only">Number of moves:</span>
                         <span class="counter">0</span>
                     </div>
-                    <div class="restartButton">
+                    <button class="restartButton">
                         <i class="fas fa-undo-alt restart" aria-label="Clicking on this icon will restart the game"></i>
                         <img src="./styles/assets/snackMilk.png" alt="An illustration of a glass of milk with a cute smiling face in the middle of the class. The glass is about four fifths full and clear. Hovering over this image will reveal the refresh button.">
-                    </div>
+                    </button>
                     <div class="timeCounter">
                         <time class="minutes" aria-label="Minutes:">00</time>:<time class="seconds" aria-label="Seconds:">00</time>
                     </div>
@@ -62,6 +65,7 @@
                 <section class="cardSection">
                     <ul class="cardContainer">
                      <!-- dynamic JS code will go here -->
+                     <!-- credit: snack drawings illustrated by anitov (source: https://www.vectorstock.com/royalty-free-vectors/vectors-by_anitnov)  -->
                     </ul>
                 </section> <!-- match memory game ends here -->
 
@@ -69,14 +73,14 @@
                 <section class="winMessage">
                     <h2>You Win!</h2>
                     <div class="winCookie">
-                        <img src="./styles/assets/cookieFrontBite.png" alt="">
+                        <img src="./styles/assets/cookieFrontBite.png" alt="This is a drawing of a smiling cookie with a bite taken out of their upper right side: still happy though and does not seem to mind.">
                     </div>
                     <p class="score">Score shown here</p>
                     <button class="resetButton">Play Again!</button>
                 </section> <!-- winning message ends here -->
     
             </div> <!-- flexContainer ends here -->
-        </main>
+        </main> <!-- main ends here -->
     </div> <!-- wrapper ends here -->
 
     <script src='https://code.jquery.com/jquery-3.4.0.min.js' integrity='sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=' crossorigin='anonymous'></script>

@@ -149,14 +149,16 @@ header {
             animation: shake 2s infinite;
         }
 
-        &:active {
+        &:active,
+        &:focus {
             position: relative;
             top: 10px;
             box-shadow: none;
+            background: darken($yellow, 10%);
         }
 
         &:focus {
-            border: 5px dotted $purple;
+            border: 4px solid $purple;
         }
 
         @keyframes shake {

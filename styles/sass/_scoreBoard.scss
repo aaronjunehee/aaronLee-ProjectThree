@@ -52,7 +52,6 @@ section.scoreBoard {
         @include mq-600 {
             font-size: 2.3rem;
         }
-        
     }
 
     .restartButton {
@@ -66,7 +65,8 @@ section.scoreBoard {
                 width: 85%;
             }
         }
-        &:hover {
+        &:hover,
+        &:focus {
             img {
                 opacity: 0;
             }
@@ -78,6 +78,14 @@ section.scoreBoard {
                 }
             }
         }
+        &:active,
+        &:focus {
+            top: 5px;
+            background: $yellow;
+            .restart {
+                font-size: 3.5rem;
+            }
+        } 
     }
 
     .restart {

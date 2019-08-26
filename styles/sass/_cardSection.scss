@@ -28,9 +28,6 @@ section .cardContainer {
         position: absolute;
         transition:all 0.5s;
         backface-visibility:hidden;
-        &:focus {
-            border: 3px dashed $purple;      
-        }
     }
 
     .front {
@@ -39,6 +36,9 @@ section .cardContainer {
         background-size: 140px;
         background-position: -9px -12px;
         background-repeat: no-repeat;
+        &:focus {
+            animation: wiggle 1s;
+        }
         @include mq-600 {
             background-size: 88px;
             background-position: -4px -4px;
@@ -50,7 +50,6 @@ section .cardContainer {
     }
 
     .back {
-      background: $yellow;
       transform:rotateY(-180deg);
     }
 

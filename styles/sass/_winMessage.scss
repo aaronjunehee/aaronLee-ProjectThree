@@ -32,7 +32,9 @@
         border-radius: 10px;
         display: block;
         margin: 0 auto;
-        padding: 8px 12px 10px 14px;
+        width: 240px;
+        height: 80px;
+        padding-bottom: 7px;
         background: $blue;
         color: $white;
         font-family: $chewy;
@@ -43,6 +45,15 @@
         -4px 4px 0px #56396d,
         1px 1px 2px rgba(0, 0, 0, 0.621);
         box-shadow: -5px 5px 1px $purple;
+        &:hover,
+        &:focus {
+            background: darken($blue, 15%);
+        }
+        &:active{
+            position: relative;
+            top: 5px;
+            box-shadow: none;
+        }
     }
 }
 
