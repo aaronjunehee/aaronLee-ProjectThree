@@ -1,98 +1,107 @@
 header {
     height: 100vh;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
-    .title { // flex container for h1
-        flex: 0 0 40%;
+    align-content: center;
+
+    .title { // flex container for h1 and snack logos
         display: flex;
-        flex-direction: column;
         align-items: center;
-        justify-content: flex-end;
+        justify-content: space-around;
+        width: 100%;
         position: relative; // for the snack logos absolute positioning
     }
     .startButton { // flex container for start button
-        flex: 0 0 30%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        position: relative;
+        top: 40px;
+        @include mq-500 {
+            top: 25px;
+        }
     }
 
 
-    h1 { // styles for the title banner
+    h1 { // styles for the title banner 'Afternoon Snack Match!'
         font-family: $chewy;
         color: $white;
         text-shadow:-1px 1px 0px #56396d,
-        -2px 2px 0px #56396d,
-        -3px 3px 0px #56396d,
-        -4px 4px 0px #56396d,
-        -5px 5px 0px #56396d,
-        -6px 6px 0px #56396d,
-        -7px 7px 0px #56396d,
-        -8px 8px 0px #56396d,
-        -9px 9px 0px #56396d,
-        -10px 10px 0px #56396d,
-        -11px 11px 0px #56396d,
-        -12px 12px 0px #56396d,
-        2px 2px 3px rgba(0, 0, 0, 0.521);
-        font-size: 11rem;
+                    -2px 2px 0px #56396d,
+                    -3px 3px 0px #56396d,
+                    -4px 4px 0px #56396d,
+                    -5px 5px 0px #56396d,
+                    -6px 6px 0px #56396d,
+                    -7px 7px 0px #56396d,
+                    -8px 8px 0px #56396d,
+                    -9px 9px 0px #56396d,
+                    -10px 10px 0px #56396d,
+                    -11px 11px 0px #56396d,
+                    -12px 12px 0px #56396d,
+                    2px 2px 3px rgba(0, 0, 0, 0.521);
+        font-size: 11.5rem;
         letter-spacing: .9rem;
         line-height: 10.5rem;
         text-align: center;
-
+        @include mq-700 {
+            font-size: 10rem;
+            line-height: 9.5rem;
+            letter-spacing: .6rem;
+        }
+        @include mq-500 {
+            font-size: 7rem;
+            letter-spacing: .40rem;
+            line-height: 8rem;
+            letter-spacing: .3rem;
+            text-shadow:-1px 1px 0px #56396d,
+                    -2px 2px 0px #56396d,
+                    -3px 3px 0px #56396d,
+                    -4px 4px 0px #56396d,
+                    -5px 5px 0px #56396d,
+                    -6px 6px 0px #56396d,
+                    -7px 7px 0px #56396d,
+                    -8px 8px 0px #56396d,
+                    -9px 9px 0px #56396d,
+                    2px 2px 3px rgba(0, 0, 0, 0.521);
+        }
         .h1LineBreak {
             display: block;
             font-size: 9rem;
             letter-spacing: .55rem;
             @include mq-700 {
-                font-size: 7.5rem;
+                font-size: 7.9rem;
+                letter-spacing: .4rem;
             }
             @include mq-500 {
-                font-size: 7.5rem;
-                line-height: 8rem;
-                letter-spacing: .30rem;
+                font-size: 5.3rem;
+                line-height: 6rem;
+                letter-spacing: .25rem;
             }
-        }
-        @include mq-700 {
-            font-size: 9rem;
-            line-height: 9.5rem;
-        }
-        @include mq-500 {
-            font-size: 6.5rem;
-            letter-spacing: .40rem;
-            line-height: 8rem;
         }
     }
 
 
-    .snackLogo { // styles for the rotating snack images 
-        width: 200px;
-        position: absolute;
+    .snackLogo { // styles for the CSS animated snack images 
+        flex: 0 1 200px;
         animation: tilting 4s infinite;
-        @include mq-1100 {
-            width: 150px;  
-        }
         @include mq-900 {
             width: 130px;  
+            position: absolute;
+            bottom: -140px;
         }
         @include mq-700 {
             width: 110px;  
+            bottom: -140px;
         }
     }
-    .logoSoftServe {
-        margin-bottom: -60px;
-        left: -130px;
-        @include mq-1100 {
-            bottom: -150px;
-            left: 100px;
-        }
+    .softServe {
+        margin-right: 5px;
         @include mq-900 {
-            bottom: -140px;
-            left: 70px;
+            left: 60px;
         }
         @include mq-700 {
-            bottom: -120px;
             left: 30px;
         }
         @include mq-600 {
@@ -100,18 +109,11 @@ header {
         }
 
     }
-    .logoFries {
-        right: -110px;
-        @include mq-1100 {
-            bottom: -160px;
-            right: 100px;
-        }
+    .fries {
         @include mq-900 {
-            bottom: -160px;
-            right: 80px;
+            right: 60px;
         }
         @include mq-700 {
-            bottom: -150px;
             right: 40px;
         }
         @include mq-600 {
@@ -130,23 +132,42 @@ header {
     .letsEat { // styles for start button
         background: $yellow;
         border-radius: 40px;
-        width: 220px;
-        height: 80px;
+        width: 300px;
+        height: 100px;
         font-family: $kalem;
-        font-size: 3rem;
+        font-size: 4rem;
         color: $purple;
         text-transform: uppercase;
         border: 2px solid $purple;
         box-shadow: -5px 10px $purple;
-        margin-top: -40px;
-        position: relative;
         transition: all .3s;
+        @include mq-700 {
+            width: 270px;
+            font-size: 3.5rem;
+            height: 90px;  
+        }
+        @include mq-500 {
+            width: 230px;
+            font-size: 3rem;
+            height: 75px;
+        }
         
         &:hover,
         &:focus {
-            height: 100px;
-            width: 250px;
+            height: 115px;
+            width: 350px;
             animation: shake 2s infinite;
+            margin-top: -15px; // to avoid shifting other elements
+            @include mq-700 {
+                width: 300px;
+                height: 100px;  
+                margin-top: -10px;
+            }
+            @include mq-500 {
+                width: 260px;
+                height: 90px;
+                margin-top: -15px;
+            }
         }
 
         &:active,
