@@ -671,6 +671,83 @@ header .letsEat:focus {
   }
 }
 
+.instructionModal {
+  position: absolute;
+  height: 600px;
+  width: 600px;
+  background: #ffef9d;
+  top: calc(50% - 300px);
+  left: calc(50% - 300px);
+  border-radius: 25px;
+  -webkit-box-shadow: 2px 2px 10px rgba(88, 88, 88, 0.534);
+          box-shadow: 2px 2px 10px rgba(88, 88, 88, 0.534);
+  z-index: 100;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #56396d;
+}
+
+@media (max-width: 600px) {
+  .instructionModal {
+    width: 370px;
+    height: 85%;
+    margin: 10px;
+    top: 5%;
+    left: calc(50% - 195px);
+  }
+}
+
+.instructionModal .closeInstructions {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  margin: 20px;
+  font-size: 3rem;
+  color: black;
+}
+
+@media (max-width: 600px) {
+  .instructionModal .closeInstructions {
+    font-size: 2.5rem;
+    margin: 15px 15px 30px;
+  }
+}
+
+.instructionModal h2 {
+  font-family: "Chewy", cursive;
+  font-size: 7rem;
+  margin: 20px 0 0;
+}
+
+@media (max-width: 600px) {
+  .instructionModal h2 {
+    font-size: 5rem;
+    margin: 7px 0;
+    line-height: 0;
+  }
+}
+
+.instructionModal p {
+  font-family: "Kalam", cursive;
+  color: black;
+  padding: 0 45px;
+  font-size: 2.5rem;
+}
+
+@media (max-width: 600px) {
+  .instructionModal p {
+    font-size: 2.1rem;
+    line-height: 2.7rem;
+  }
+}
+
 main {
   display: none;
   height: 100vh;

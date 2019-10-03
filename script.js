@@ -148,8 +148,20 @@ snackApp.displaySnacks = (snackArray) => {
 
 // Function to append instructions modal at the beginning of each game
 snackApp.displayInstructions = () => {
+    const divTag = $('<div>').addClass('instructionModal')
+    const closeButton = $('<i class="fas fa-times closeInstructions" aria-label="Click here to close instructions and play the game"></i>')
+    const title = $('<h2>How to Play!<h2>')
+    const instructions = $("<p>You're walking along the street when your stomach starts to rumble and you notice smiling cookies floating in the sky above you. You're not going crazy, you just need an afternoon snack! Choose any two cookies, flip them around to reveal their snack-type content, and try to match the matching pairs!</p>")
 
+    divTag.append(closeButton, title, instructions)
+    $('.instructions').append(divTag)
+
+    $('.closeInstructions').on('click', function(){
+        $('.instructionModal').detach();
+    })
 }
+
+
 
 
 // on user click, class of 'selected' is attached to clicked card and checked if the subsequent clicked card is a match or not
@@ -191,6 +203,9 @@ snackApp.startGame = function() {
         setTimeout(() => {
             $('main:hidden').fadeIn("slow").addClass('show')
         }, 600)
+        setTimeout(() => {
+            snackApp.displayInstructions();
+        }, 2000)
     });
 }
 
@@ -246,7 +261,7 @@ snackApp.restartGame = function(){
 }
 
 
-// function that checks when all the cards have been matched; this function is called everytime a true match has occured between two cards; if true (ie. when all the cards are matched), the winning message will appear with the users score; a reset button will also apear and when clicked will restart the game for the user.
+// function that checks when all the cards have been matched; this function is called every time a true match has occurred between two cards; if true (ie. when all the cards are matched), the winning message will appear with the users score; a reset button will also appear and when clicked will restart the game for the user.
 snackApp.checkWin = function () {
     if ($('.card.matched').length === snackApp.snacks.length) {
         $('.winMessage').addClass('userWon');
